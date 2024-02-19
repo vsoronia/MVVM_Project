@@ -50,7 +50,7 @@ enum UserPostsViewState {
     case loading
     case userPosts([UserPostsData])
     case error(String)
-//    case isEmpty
+    case isEmpty
 }
 
 
