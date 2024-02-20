@@ -33,13 +33,17 @@ struct UserPostsView: View {
                 
                 ProgressView()
                 
+            case .isEmpty:
+                Text("No Posts yet.")
+                
+                
             case .userPosts(let posts):
                 
                 ScrollView {
                     
                     ForEach(posts) { post in
                         UserPostsListRowView(user: "User", title: post.title, bodyText: post.body)
-
+                        
                         
                             .padding(.vertical, 5)
                             .padding(.horizontal, 12)
@@ -56,7 +60,7 @@ struct UserPostsView: View {
             }
         }
         .task {
-             await userPostsViewModel.fetchData(userID: userID)
+            await userPostsViewModel.fetchData(userID: userID)
         }
     }
 }
