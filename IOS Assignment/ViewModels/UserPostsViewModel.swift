@@ -25,9 +25,15 @@ class UserPostsViewModel: ObservableObject {
         
 
             let userPostsResults = await userPostsManager.fetchUserPostsData(userID: userID)
+        
             switch userPostsResults {
             case .success(let userPostsResult):
-                self.state = .userPosts(userPostsResult.data)
+                if userPostsResult.data.isEmpty {
+                    self.state = .isEmpty
+                }
+                else{
+                    self.state = .userPosts(userPostsResult.data)
+                }
                 
             case .failure(let error):
                 self.state = .error(error.localizedDescription)
@@ -48,9 +54,9 @@ class UserPostsViewModel: ObservableObject {
 
 enum UserPostsViewState {
     case loading
+    case isEmpty
     case userPosts([UserPostsData])
     case error(String)
-    case isEmpty
 }
 
 
