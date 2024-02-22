@@ -20,6 +20,7 @@ struct UsersView: View {
     @State var userDeleted: Bool = false
     let usersDetailViewModel = UsersDetailViewModel()
     let userPostsViewModel = UserPostsViewModel()
+    let userToDosViewModel = UserToDosViewModel()
 
     
     init(
@@ -98,8 +99,8 @@ struct UsersView: View {
                     UserPostsView(viewModel: userPostsViewModel, userID: id)
                 case .userComments:
                     EmptyView()
-                case .userTodos:
-                    EmptyView()
+                case .userTodos(let id):
+                    UserToDosView(viewModel: userToDosViewModel, userID: id)
                 }
             }
             .navigationBarTitle(SideMenuRowViewModel.users.title, displayMode: .inline)

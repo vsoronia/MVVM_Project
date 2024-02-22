@@ -76,9 +76,11 @@ struct UsersDetailView: View {
                         }
                         .foregroundColor(.blue)
                         
-                        Button("Show TODOs") {
-                        }
-                        .foregroundColor(.blue)
+                        Button{
+                            router.navigate(to: .userTodos(id: userID))
+                        } label: {Text("Show TODOs")}
+                        
+                            .foregroundColor(.blue)
                         
                         Spacer()
                         

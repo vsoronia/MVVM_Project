@@ -13,7 +13,7 @@ class Router: ObservableObject {
         case userDetails(id: Int)
         case userPosts(id: Int)
         case userComments
-        case userTodos
+        case userTodos(id: Int)
     }
     
     @Published var navPath = NavigationPath()

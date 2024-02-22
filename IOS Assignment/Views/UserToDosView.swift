@@ -1,23 +1,23 @@
 //
-//  UserPostsView.swift
+//  UserToDosView.swift
 //  IOS Assignment
 //
-//  Created by SORONIATIS Vasilis on 12/2/24.
+//  Created by SORONIATIS Vasilis on 22/2/24.
 //
 
 import SwiftUI
 
-struct UserPostsView: View {
-    
-    @ObservedObject var userPostsViewModel: UserPostsViewModel
+struct UserToDosView: View {
+
+    @ObservedObject var userToDosViewModel: UserToDosViewModel
     let userID: Int
     
     init(
-        viewModel: UserPostsViewModel,
+        viewModel: UserToDosViewModel,
         userID: Int
     )
     {
-        self.userPostsViewModel = viewModel
+        self.userToDosViewModel = viewModel
         self.userID = userID
     }
     
@@ -27,7 +27,7 @@ struct UserPostsView: View {
             LinearGradient(colors: [.colorBlackLight, .colorBlackDark], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            switch userPostsViewModel.state {
+            switch userToDosViewModel.state {
                 
             case .loading:
                 
@@ -35,29 +35,27 @@ struct UserPostsView: View {
                 
             case .isEmpty:
                 ScrollView{
-                    Text("No Posts yet.")
+                    Text("No TODOs yet.")
                         .font(.title)
                         .padding(30)
                 }
                 .refreshable {
-                    userPostsViewModel.userPostsReload(userID: userID)
+                    userToDosViewModel.userToDosReload(userID: userID)
                 }
                 
                 
-            case .userPosts(let posts):
+            case .userToDos(let toDos):
                 
                 ScrollView {
                     
-                    ForEach(posts) { post in
-                        UserPostsListRowView(user: "User", title: post.title, bodyText: post.body)
-                        
-                        
+                    ForEach(toDos) { toDo in
+                        ToDosListRowView(viewModel: ToDosListRowViewModel(user: "User", title: toDo.title, dueOn: toDo.due_on, taskStatus: isPending(status: toDo.status)))
                             .padding(.vertical, 5)
                             .padding(.horizontal, 12)
                     }
                 }
                 .refreshable {
-                    userPostsViewModel.userPostsReload(userID: userID)
+                    userToDosViewModel.userToDosReload(userID: userID)
                 }
                 
             case .error(let error):
@@ -66,15 +64,24 @@ struct UserPostsView: View {
                 
             }
         }
+        
         .task {
-            await userPostsViewModel.fetchData(userID: userID)
+            await userToDosViewModel.fetchData(userID: userID)
         }
     }
 }
 
-
-
-
-#Preview {
-    UserPostsView(viewModel: UserPostsViewModel(), userID: 6265160)
+extension UserToDosView {
+    func isPending(status: TaskStatus) -> Bool {
+        if status == .pending {
+            return true
+        }
+        else{
+            return false
+        }
+    }
 }
+
+//#Preview {
+//    UserToDosView()
+//}
