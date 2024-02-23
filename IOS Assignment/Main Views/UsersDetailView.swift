@@ -72,8 +72,9 @@ struct UsersDetailView: View {
                         
                             .foregroundColor(.blue)
                         
-                        Button("Show Comments") {
-                        }
+                        Button{
+                            router.navigate(to: .userComments(id: userID))
+                        } label: {Text("Show Comments")}
                         .foregroundColor(.blue)
                         
                         Button{

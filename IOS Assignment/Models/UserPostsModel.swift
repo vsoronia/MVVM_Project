@@ -14,10 +14,8 @@ struct UserPostsResults: Codable {
 }
 
 struct UserPostsData: Codable, Identifiable {
-    let id: Int
-    let user_id: Int
-    let title: String
-    let body: String
+    let id, user_id: Int
+    let title, body: String
 }
 
 

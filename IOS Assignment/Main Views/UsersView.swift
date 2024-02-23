@@ -21,6 +21,7 @@ struct UsersView: View {
     let usersDetailViewModel = UsersDetailViewModel()
     let userPostsViewModel = UserPostsViewModel()
     let userToDosViewModel = UserToDosViewModel()
+    let userCommentsViewModel = UserCommentsViewModel()
 
     
     init(
@@ -97,8 +98,8 @@ struct UsersView: View {
                     UsersDetailView(viewModel: usersDetailViewModel, userDeleted: $userDeleted, userID: id)
                 case .userPosts(let id):
                     UserPostsView(viewModel: userPostsViewModel, userID: id)
-                case .userComments:
-                    EmptyView()
+                case .userComments(let id):
+                    UserCommentsView(viewModel: userCommentsViewModel, userID: id)
                 case .userTodos(let id):
                     UserToDosView(viewModel: userToDosViewModel, userID: id)
                 }

@@ -8,11 +8,11 @@
 
 import SwiftUI
 
-class Router: ObservableObject {
+final class Router: ObservableObject {
     enum Destination: Codable, Hashable {
         case userDetails(id: Int)
         case userPosts(id: Int)
-        case userComments
+        case userComments(id: Int)
         case userTodos(id: Int)
     }
     
