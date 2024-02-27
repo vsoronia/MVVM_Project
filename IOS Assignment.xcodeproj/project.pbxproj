@@ -118,6 +118,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FB142642B8DC17C00F0E563 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				1F41C3462B693D8B007FD4EA /* HomeListRowView.swift */,
+				1F0C151F2B70EE2700CE5303 /* UsersListRowView.swift */,
+				1F0C152D2B73859E00CE5303 /* AboutUsListRowView.swift */,
+				1F0C15352B75017B00CE5303 /* ToDosListRowView.swift */,
+				1F2E65DF2B5FC3BD002CE79C /* SideMenuRowView.swift */,
+				1FE70C402B5FA84200E5BDBD /* SideMenuButtonView.swift */,
+				1FAC8DA52B7A337C00C94302 /* UserPostsListRowView.swift */,
+				1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		1FD1D17C2B56F5EB0038A73C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 				1FD1D19A2B57C6710038A73C /* Models */,
 				1FD1D1992B57C64C0038A73C /* Main Views */,
 				1FD1D1A92B58098D0038A73C /* Views */,
+				1FB142642B8DC17C00F0E563 /* SubViews */,
 				1FD1D19B2B57C6830038A73C /* ViewModels */,
 				1FD1D1A62B5804700038A73C /* Modifiers */,
 				1FD1D1882B56F5EB0038A73C /* IOS_AssignmentApp.swift */,
@@ -166,7 +182,6 @@
 				1FE70C4C2B5FABE500E5BDBD /* UsersView.swift */,
 				1F2E65DD2B5FBAFE002CE79C /* ToDosView.swift */,
 				1FE70C4A2B5FA9BE00E5BDBD /* AboutUsView.swift */,
-				1F0C15212B72158E00CE5303 /* UsersDetailView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -219,17 +234,10 @@
 		1FD1D1A92B58098D0038A73C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F41C3462B693D8B007FD4EA /* HomeListRowView.swift */,
-				1F0C151F2B70EE2700CE5303 /* UsersListRowView.swift */,
-				1F0C152D2B73859E00CE5303 /* AboutUsListRowView.swift */,
-				1F0C15352B75017B00CE5303 /* ToDosListRowView.swift */,
-				1F2E65DF2B5FC3BD002CE79C /* SideMenuRowView.swift */,
+				1F0C15212B72158E00CE5303 /* UsersDetailView.swift */,
 				1FD1D1A42B57E6FC0038A73C /* SideMenuView.swift */,
-				1FE70C402B5FA84200E5BDBD /* SideMenuButtonView.swift */,
 				1FAC8D9E2B7A204E00C94302 /* UserPostsView.swift */,
-				1FAC8DA52B7A337C00C94302 /* UserPostsListRowView.swift */,
 				1FB142562B8778D000F0E563 /* UserToDosView.swift */,
-				1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */,
 				1FB142622B88C33E00F0E563 /* UserCommentsView.swift */,
 			);
 			path = Views;
