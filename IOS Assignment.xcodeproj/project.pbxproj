@@ -46,6 +46,7 @@
 		1FB1425F2B88BE0E00F0E563 /* UserCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1425E2B88BE0E00F0E563 /* UserCommentsViewModel.swift */; };
 		1FB142612B88C31500F0E563 /* UserCommentsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */; };
 		1FB142632B88C33E00F0E563 /* UserCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB142622B88C33E00F0E563 /* UserCommentsView.swift */; };
+		1FB142662B8E20D100F0E563 /* CustomCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB142652B8E20D100F0E563 /* CustomCircleView.swift */; };
 		1FD1D1892B56F5EB0038A73C /* IOS_AssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1D1882B56F5EB0038A73C /* IOS_AssignmentApp.swift */; };
 		1FD1D18D2B56F5ED0038A73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD1D18C2B56F5ED0038A73C /* Assets.xcassets */; };
 		1FD1D1902B56F5ED0038A73C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD1D18F2B56F5ED0038A73C /* Preview Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		1FB1425E2B88BE0E00F0E563 /* UserCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsViewModel.swift; sourceTree = "<group>"; };
 		1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsRowView.swift; sourceTree = "<group>"; };
 		1FB142622B88C33E00F0E563 /* UserCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsView.swift; sourceTree = "<group>"; };
+		1FB142652B8E20D100F0E563 /* CustomCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleView.swift; sourceTree = "<group>"; };
 		1FD1D1852B56F5EB0038A73C /* IOS Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD1D1882B56F5EB0038A73C /* IOS_AssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_AssignmentApp.swift; sourceTree = "<group>"; };
 		1FD1D18C2B56F5ED0038A73C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				1FE70C402B5FA84200E5BDBD /* SideMenuButtonView.swift */,
 				1FAC8DA52B7A337C00C94302 /* UserPostsListRowView.swift */,
 				1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */,
+				1FB142652B8E20D100F0E563 /* CustomCircleView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				1F7E25B22B61083200345841 /* NetworkingService.swift in Sources */,
 				1F0C15222B72158E00CE5303 /* UsersDetailView.swift in Sources */,
 				1FAC8DA42B7A2CBD00C94302 /* UserPostsViewModel.swift in Sources */,
+				1FB142662B8E20D100F0E563 /* CustomCircleView.swift in Sources */,
 				1F497D6E2B59309C00017514 /* SideMenuRowViewModel.swift in Sources */,
 				1F0C151E2B70D5C600CE5303 /* UsersViewModel.swift in Sources */,
 				1FE70C492B5FA96600E5BDBD /* HomeView.swift in Sources */,
