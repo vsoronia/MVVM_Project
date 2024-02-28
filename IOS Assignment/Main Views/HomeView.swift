@@ -18,8 +18,6 @@ struct HomeView: View {
     @Binding var loadedFirstTime: Bool
 
 
-
-    
     init(
         showMenu: Binding<Bool>,
         showAnimation: Binding<Bool>,

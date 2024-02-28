@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct HomePostResults: Codable {
     
     let data: [HomePostData]
@@ -19,7 +18,6 @@ struct HomePostData: Codable, Identifiable {
     let title: String
     let body: String
 }
-
 
 struct HomeResponse: Codable {
     let code: Int
