@@ -36,6 +36,7 @@ struct UsersDetailView: View {
         ZStack {
             LinearGradient(colors: [.colorBlackLight, .colorBlackMedium], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
+            CustomCircleView(ShapeColor: .gray, ShapeOpacity: 0.1)
             
             switch usersDetailViewModel.state {
                 
@@ -85,9 +86,10 @@ struct UsersDetailView: View {
                         
                         Spacer()
                         
-                        Button("Delete User") {
+                        Button("Delete User", systemImage: "trash") {
                             showAlert.toggle()
                         }
+                        .font(.title3)
                         .alert("Press Confirm to delete the user.",isPresented: $showAlert)  {
                             Button(action: {
                                 deleteUser(toDeleteUserID: userDetails.id)
