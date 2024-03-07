@@ -60,6 +60,7 @@ struct UsersDetailView: View {
                         .foregroundColor(.gray)
                     Spacer()
                 }
+                .padding()
                 
                 
                 HStack {
