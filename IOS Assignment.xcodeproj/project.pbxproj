@@ -34,6 +34,8 @@
 		1F7E25B52B611D7B00345841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1F7E25B42B611D7B00345841 /* Alamofire */; };
 		1F874CF52B84F2FE00406CE3 /* UserToDosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F874CF42B84F2FE00406CE3 /* UserToDosManager.swift */; };
 		1F874CF72B84F31400406CE3 /* UserToDosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F874CF62B84F31400406CE3 /* UserToDosViewModel.swift */; };
+		1FA418432B9B2984001113BE /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA418422B9B2984001113BE /* SignUpViewModel.swift */; };
+		1FA418452B9B603D001113BE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA418442B9B603D001113BE /* SignUpView.swift */; };
 		1FAC8D9D2B7A008A00C94302 /* ToDoListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8D9C2B7A008A00C94302 /* ToDoListRowViewModel.swift */; };
 		1FAC8D9F2B7A204E00C94302 /* UserPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8D9E2B7A204E00C94302 /* UserPostsView.swift */; };
 		1FAC8DA22B7A2BCC00C94302 /* UserPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC8DA12B7A2BCC00C94302 /* UserPostsManager.swift */; };
@@ -96,6 +98,8 @@
 		1F7E25B12B61083200345841 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		1F874CF42B84F2FE00406CE3 /* UserToDosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToDosManager.swift; sourceTree = "<group>"; };
 		1F874CF62B84F31400406CE3 /* UserToDosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToDosViewModel.swift; sourceTree = "<group>"; };
+		1FA418422B9B2984001113BE /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		1FA418442B9B603D001113BE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1FAC8D9C2B7A008A00C94302 /* ToDoListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRowViewModel.swift; sourceTree = "<group>"; };
 		1FAC8D9E2B7A204E00C94302 /* UserPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsView.swift; sourceTree = "<group>"; };
 		1FAC8DA12B7A2BCC00C94302 /* UserPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsManager.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				1F874CF42B84F2FE00406CE3 /* UserToDosManager.swift */,
 				1FB1425E2B88BE0E00F0E563 /* UserCommentsViewModel.swift */,
 				1FB1425A2B88BDE200F0E563 /* UserCommentsManager.swift */,
+				1FA418422B9B2984001113BE /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				1FAC8D9E2B7A204E00C94302 /* UserPostsView.swift */,
 				1FB142562B8778D000F0E563 /* UserToDosView.swift */,
 				1FB142622B88C33E00F0E563 /* UserCommentsView.swift */,
+				1FA418442B9B603D001113BE /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,9 +432,11 @@
 				1F0C15342B74F61500CE5303 /* ToDosManager.swift in Sources */,
 				1FB142632B88C33E00F0E563 /* UserCommentsView.swift in Sources */,
 				1F0C152A2B72718300CE5303 /* HomeManager.swift in Sources */,
+				1FA418432B9B2984001113BE /* SignUpViewModel.swift in Sources */,
 				1F0C151C2B70D2EC00CE5303 /* UsersModel.swift in Sources */,
 				1FB142612B88C31500F0E563 /* UserCommentsRowView.swift in Sources */,
 				1F0C15202B70EE2700CE5303 /* UsersListRowView.swift in Sources */,
+				1FA418452B9B603D001113BE /* SignUpView.swift in Sources */,
 				1F874CF72B84F31400406CE3 /* UserToDosViewModel.swift in Sources */,
 				1FB1425B2B88BDE200F0E563 /* UserCommentsManager.swift in Sources */,
 				1F0C15282B72494800CE5303 /* UserManager.swift in Sources */,
