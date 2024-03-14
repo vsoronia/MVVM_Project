@@ -16,39 +16,43 @@ struct SideMenuView: View {
     // MARK: - Content
     
     var body: some View {
-        ZStack{
-            
+        
+            ZStack{
+                
                 Color.black.opacity(showMenu ? 0.45 : 0)
-                .animation(.linear(duration: 0.4), value: showAnimation)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    showMenu.toggle()
-                    showAnimation.toggle()
-                }
-            HStack {
-                ZStack {
-                    
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 270)
-                        .shadow(color: .black.opacity(0.8), radius: 5, x: 8)
-                        .ignoresSafeArea()
-                    
-                    VStack {
-                        
-                        SideMenuRowView(selectedSideMenuTab: $selectedSideMenuTab, showMenu: $showMenu, showAnimation: $showAnimation)
-                        Spacer()
+                    .animation(.linear(duration: 0.4), value: showAnimation)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        showMenu.toggle()
+                        showAnimation.toggle()
                     }
-                    .frame(width: 270)
-                    .padding(10)
-                    .background(Color.white)
-                    .edgesIgnoringSafeArea(.bottom)
+                HStack {
+                    ZStack {
+                        
+                        Rectangle()
+                            .fill(.white)
+                            .frame(width: 270)
+                            .shadow(color: .black.opacity(0.8), radius: 5, x: 8)
+                            .ignoresSafeArea()
+                        
+                        VStack {
+                            
+                            SideMenuRowView(selectedSideMenuTab: $selectedSideMenuTab, showMenu: $showMenu, showAnimation: $showAnimation)
+                            Spacer()
+                        }
+                        .frame(width: 270)
+                        .padding(10)
+                        .background(Color.white)
+                        .edgesIgnoringSafeArea(.bottom)
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .offset(x: showMenu ? 0 : -UIScreen.main.bounds.width)
+                .animation(.easeInOut(duration: 0.4), value: showAnimation)
             }
-            .offset(x: showMenu ? 0 : -UIScreen.main.bounds.width)
-            .animation(.easeInOut(duration: 0.4), value: showAnimation)
-        }
+        
+        .accessibilityHidden(!showMenu)
+        .accessibilityElement(children: .contain)
     }
 }
 

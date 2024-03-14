@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings
+  IOS Assignment
+
+  Created by SORONIATIS Vasilis on 12/3/24.
+  
+*/
+
+// SignUp View
+"placeholder_first_name" = "Enter Firstname";
+"placeholder_last_name" = "Enter Lastname";
+"placeholder_email" = "Enter email";
+"placeholder_age" = "Enter your age";
+"placeholder_password" = "Enter Passoword";
+"placeholder_confirm_password" = "Confirm Password";
+"sign_up" = "SignUp";
+"error_first_name_length" = "Firstname must be 3 or more characters long.";
+"error_last_name_length" = "Lastname must be 3 or more characters long.";
+"error_age" = "You should be at least 18 years old.";
+"error_email" = "Your email isn't correct.";
+"length_error_password" = "Password must be 8 or more characters long.";
+"weak_error_password" = "Password is weak. You need uppercase, lowercase letters, digits and symbols.";
+"error_confirm_password" = "Passwords don't match.";
+"signup_form_title" = "SignUp Form";
+
+
+// AboutUs View
+"about_the_app" = "ABOUT THE APP";
+"copyright_message" = "Copyright © All right reserved.";
+"application" = "Application";
+"todos_app" = "TODOs App";
+"compatibility" = "Compatibility";
+"min_ios_version" = "min iOS 16";
+"technology" = "Technology";
+"swift_ui" = "SwiftUI";
+"version" = "Version";
+"app_version" = "1.0";
+"developer" = "Developer";
+"developer_name" = "Vsoro";
+"designer" = "Designer";
+"designer_name" = "Vsoro";
+"facebook" = "Facebook";
+"instagram" = "Instagram";
+"contact_and_support" = "Contact & Support";
+"contact_email" = "vsoro@example.com";
+"todos" = "TODOs";
+
+
+// UserDetails View
+"user_email %@" = "Email: %@";
+"user_gender %@" = "Gender: %@";
+"user_status %@" = "Status: %@";
+
+"user_posts_button" = "Show Posts";
+"user_comments_button" = "Show Comments";
+"user_todos_button" = "Show TODOs";
+"user_delete_button" = "Delete User";
+"delete_user_alert_message" = "Press Confirm to delete the user.";
+"user_delete_confirm" = "Confirm";
+"user_delete_cancel" = "Cancel";
+
+//UserPosts View
+"user_no_posts" = "No Posts yet.";
+
+//UserComments View
+"user_no_comments" = "No Comments yet.";
+
+//UserTodos View
+"user_no_todos" = "No TODOs yet.";

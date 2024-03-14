@@ -13,37 +13,65 @@ struct AboutUsView: View {
     @Binding var showAnimation: Bool
     @Binding var selectedSideMenuTab: Int
     
+
     var body: some View {
         NavigationStack {
-            List{
-                
+            List {
                 Section(
-                    header: Text("ABOUT THE APP"),
+                    header: Text(String.aboutTheApp),
                     footer: HStack {
                         Spacer()
-                        Text("Copyright © All right reserved.")
+                        Text(String.copyrightMessage)
                         Spacer()
                     }
-                        .padding(20)
+                    .padding(20)
                 ) {
-                    AboutUsListRowView(rowLabel: "Application", rowIcon: "apps.iphone", rowContent: "TODOs App", rowTintColor: .blue)
-                    
-                    AboutUsListRowView(rowLabel: "Compatibility", rowIcon: "info.circle", rowContent: "min iOS 16", rowTintColor: .red)
-                    
-                    AboutUsListRowView(rowLabel: "Technology", rowIcon: "swift", rowContent: "SwiftUI", rowTintColor: .orange)
-                    
-                    AboutUsListRowView(rowLabel: "Version", rowIcon: "gear", rowContent: "1.0", rowTintColor: .purple)
-                    
-                    AboutUsListRowView(rowLabel: "Developer", rowIcon: "ellipsis.curlybraces", rowContent: "Vsoro", rowTintColor: .mint)
-                    
-                    AboutUsListRowView(rowLabel: "Designer", rowIcon: "paintpalette", rowContent: "Vsoro", rowTintColor: .pink)
-                    
-                    AboutUsListRowView(rowLabel: "Facebook", rowIcon: "f.square", rowTintColor: .indigo, rowLinkLabel: "TODOs", rowLinkDestination: "https://facebook.com")
-                    
-                    AboutUsListRowView(rowLabel: "Instagram", rowIcon: "camera.metering.center.weighted", rowTintColor: .purple, rowLinkLabel: "_TODOs", rowLinkDestination: "https://instagram.com")
-                    
-                    AboutUsListRowView(rowLabel: "Contact & Support", rowIcon: "questionmark.circle", rowContent: "vsoro@example.com", rowTintColor: .blue)
-                    
+                    AboutUsListRowView(rowLabel: .application,
+                                       rowIcon: "apps.iphone",
+                                       rowContent: .todosApp,
+                                       rowTintColor: .blue)
+
+                    AboutUsListRowView(rowLabel: .compatibility,
+                                       rowIcon: "info.circle",
+                                       rowContent: .miniOSVersion,
+                                       rowTintColor: .red)
+
+                    AboutUsListRowView(rowLabel: .technology,
+                                       rowIcon: "swift",
+                                       rowContent: .swiftUI,
+                                       rowTintColor: .orange)
+
+                    AboutUsListRowView(rowLabel: .version,
+                                       rowIcon: "gear",
+                                       rowContent: .appVersion,
+                                       rowTintColor: .purple)
+
+                    AboutUsListRowView(rowLabel: .developer,
+                                       rowIcon: "ellipsis.curlybraces",
+                                       rowContent: .developerName,
+                                       rowTintColor: .mint)
+
+                    AboutUsListRowView(rowLabel: .designer,
+                                       rowIcon: "paintpalette",
+                                       rowContent: .designerName,
+                                       rowTintColor: .pink)
+
+                    AboutUsListRowView(rowLabel: .facebook,
+                                       rowIcon: "f.square",
+                                       rowTintColor: .indigo,
+                                       rowLinkLabel: .todos,
+                                       rowLinkDestination: "https://facebook.com")
+
+                    AboutUsListRowView(rowLabel: .instagram,
+                                       rowIcon: "camera.metering.center.weighted",
+                                       rowTintColor: .purple,
+                                       rowLinkLabel: .todos,
+                                       rowLinkDestination: "https://instagram.com")
+
+                    AboutUsListRowView(rowLabel: .contactAndSupport,
+                                       rowIcon: "questionmark.circle",
+                                       rowContent: .contactEmail,
+                                       rowTintColor: .blue)
                 }
             }
             .navigationBarTitle(SideMenuRowViewModel.about.title, displayMode: .inline)

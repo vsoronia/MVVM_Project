@@ -50,13 +50,13 @@ struct UsersDetailView: View {
                     Text(userDetails.name)
                         .font(.title)
                     
-                    Text("Email: \(userDetails.email)")
+                    Text(LocalizedStringKey("user_email \(userDetails.email)"))
                         .foregroundColor(.gray)
                     
-                    Text("Gender: \(userDetails.gender)")
+                    Text(LocalizedStringKey("user_gender \(userDetails.gender)"))
                         .foregroundColor(.gray)
                     
-                    Text("Status: \(userDetails.status)")
+                    Text(LocalizedStringKey("user_status \(userDetails.status)"))
                         .foregroundColor(.gray)
                     Spacer()
                 }
@@ -70,39 +70,39 @@ struct UsersDetailView: View {
                         
                         Button {
                             router.navigate(to: .userPosts(id: userID))
-                        } label: {Text("Show Posts")}
+                        } label: {Text(verbatim: .userPostsButton)}
                         
                             .foregroundColor(.blue)
                         
                         Button{
                             router.navigate(to: .userComments(id: userID))
-                        } label: {Text("Show Comments")}
+                        } label: {Text(verbatim: .userCommentsButton)}
                         .foregroundColor(.blue)
                         
                         Button{
                             router.navigate(to: .userTodos(id: userID))
-                        } label: {Text("Show TODOs")}
+                        } label: {Text(verbatim: .userTodosButton)}
                         
                             .foregroundColor(.blue)
                         
                         Spacer()
                         
-                        Button("Delete User", systemImage: "trash") {
+                        Button(String.userDeleteButton, systemImage: "trash") {
                             showAlert.toggle()
                         }
                         .font(.title3)
-                        .alert("Press Confirm to delete the user.",isPresented: $showAlert)  {
+                        .alert(String.userDeleteAlertMessage, isPresented: $showAlert)  {
                             Button(action: {
                                 deleteUser(toDeleteUserID: userDetails.id)
                             }, label: {
-                                Text("Confirm")
+                                Text(verbatim: .userDeleteConfirm)
                             })
                             
                             
                             Button(action: {
                                 showAlert.toggle()
                             }, label: {
-                                Text("Cancel")
+                                Text(verbatim: .userDeleteCancel)
                                     .foregroundStyle(Color.red)
                             })
                         }

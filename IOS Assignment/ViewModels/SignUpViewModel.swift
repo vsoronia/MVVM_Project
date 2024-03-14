@@ -59,8 +59,7 @@ final class SignUpViewModel: ObservableObject {
             .dropFirst(2)
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { email in
-                let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-                let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+                let emailPredicate = StringUtils.emailPredicate()
                 print(email)
                 return emailPredicate.evaluate(with: email)
             }
@@ -135,25 +134,25 @@ final class SignUpViewModel: ObservableObject {
     init() {
         validFirstNamePublisher
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "Firstname must be 3 or more characters long."}
+            .map { $0 ? "" : .errorFirstNameLength}
             .assign(to: \.firstNameErrorMessage, on: self)
             .store(in: &cancellable)
         
         validLastNamePublisher
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "Lastname must be 3 or more characters long."}
+            .map { $0 ? "" : .errorLastNameLength}
             .assign(to: \.lastNameErrorMessage, on: self)
             .store(in: &cancellable)
         
         validAgePublisher
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "You should be at least 18 years old"}
+            .map { $0 ? "" : .errorAge}
             .assign(to: \.ageErrorMessage, on: self)
             .store(in: &cancellable)
         
         validEmailPublisher
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "Your email isn't correct"}
+            .map { $0 ? "" : .errorEmail}
             .assign(to: \.emailErrorMessage, on: self)
             .store(in: &cancellable)
         
@@ -162,9 +161,9 @@ final class SignUpViewModel: ObservableObject {
             .map { passValidationCase in
                 switch passValidationCase {
                 case .invalidLength:
-                    return "Password must be 8 or more characters long."
+                    return .lengthErrorPassword
                 case .weakPassword:
-                    return "Password is weak. You need uppercase, lowercase letters, digits and symbols."
+                    return .weakErrorPassword
                 default:
                     return ""
                 }
@@ -174,7 +173,7 @@ final class SignUpViewModel: ObservableObject {
         
         validOverallPasswordPublisher
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "Passwords don't match."}
+            .map { $0 ? "" : .errorConfirmPassword}
             .assign(to: \.confirmPasswordErrorMessage, on: self)
             .store(in: &cancellable)
         
