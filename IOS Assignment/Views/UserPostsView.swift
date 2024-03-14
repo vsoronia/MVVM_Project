@@ -35,7 +35,7 @@ struct UserPostsView: View {
                 
             case .isEmpty:
                 ScrollView{
-                    Text("No Posts yet.")
+                    Text(verbatim: .userWithNoPosts)
                         .font(.title)
                         .padding(30)
                 }

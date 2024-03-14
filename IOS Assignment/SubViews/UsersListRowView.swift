@@ -43,12 +43,14 @@ struct UsersListRowView: View {
                                 .symbolEffect(.pulse.wholeSymbol, options: .repeating)
                                 .foregroundStyle(Color(.green))
                                 .padding(5)
+                                .accessibilityLabel("active user")
                         }
                         
                         else {
                             Image(systemName: "smallcircle.filled.circle.fill")
                                 .foregroundStyle(Color(.gray))
                                 .padding(5)
+                                .accessibilityLabel("inactive user")
                         }
                         
                         Spacer()

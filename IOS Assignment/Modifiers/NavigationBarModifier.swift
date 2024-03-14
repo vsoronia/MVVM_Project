@@ -23,11 +23,11 @@ struct NavigationBarModifier: ViewModifier {
                                     Button(action: {
                 isSignupPresented.toggle()
             }) {
-                Text("Signup")
+                Text(verbatim: .signUp)
             }
                 .padding())
             .sheet(isPresented: $isSignupPresented) {
-                SignUpView()}
+                SignUpView(signupViewIsPresented: $isSignupPresented)}
             .toolbarBackground(Color.colorNavBar, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         

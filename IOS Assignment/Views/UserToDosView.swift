@@ -35,7 +35,7 @@ struct UserToDosView: View {
                 
             case .isEmpty:
                 ScrollView{
-                    Text("No TODOs yet.")
+                    Text(verbatim: .userWithNoTodos)
                         .font(.title)
                         .padding(30)
                 }
