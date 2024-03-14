@@ -40,8 +40,9 @@ struct HomeListRowView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
-                    .foregroundStyle(LinearGradient(colors:[.colorSeconderyPlaceholder,.colorPlaceholder], startPoint: .topLeading, endPoint: .bottomTrailing) )
+                    .foregroundStyle(LinearGradient(colors:[.colorSecondaryPlaceholder,.colorPlaceholder], startPoint: .topLeading, endPoint: .bottomTrailing) )
                     .clipShape(Circle())
+                    .accessibilityHidden(true)
 
                 Spacer()
                 
@@ -52,6 +53,8 @@ struct HomeListRowView: View {
                         .frame(width: 26, height: 26)
                         .foregroundColor(.colorExpandSymbol)
                         .padding(.bottom, 5)
+                        .accessibilityHidden(true)
+
                 }
                 
                 else {
@@ -62,6 +65,8 @@ struct HomeListRowView: View {
                         .frame(width: 22, height: 22)
                         .foregroundColor(.colorExpandSymbol)
                         .padding(.bottom, 5)
+                        .accessibilityHidden(true)
+
                 }
                 
             }
@@ -75,7 +80,7 @@ struct HomeListRowView: View {
                     .font(.title3)
                     .foregroundColor(.primary)
                     .padding(3)
-                
+
                 ScrollView(){
                     
                     Text("""
@@ -85,6 +90,7 @@ struct HomeListRowView: View {
                     .font(.body)
                     .foregroundColor(.secondary)
                     .lineLimit(.max)
+
                     
                 }
                 

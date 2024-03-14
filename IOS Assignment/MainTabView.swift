@@ -24,39 +24,41 @@ struct MainTabView: View {
     var body: some View {
         
         
-            ZStack{
+        ZStack{
+           Group {
+            switch selectedSideMenuTab {
+            case 0:
+                HomeView(
+                    showMenu: $showMenu,
+                    showAnimation: $showAnimation,
+                    selectedSideMenuTab: $selectedSideMenuTab,
+                    viewModel: homeViewModel,
+                    loadedFirstTime: $homeLoadedFirstTime)
                 
-                switch selectedSideMenuTab {
-                case 0:
-                    HomeView(
-                        showMenu: $showMenu,
-                        showAnimation: $showAnimation,
-                        selectedSideMenuTab: $selectedSideMenuTab,
-                        viewModel: homeViewModel,
-                        loadedFirstTime: $homeLoadedFirstTime)
-                    
-                case 1:
- 
-                        UsersView(showMenu: $showMenu,
-                                  showAnimation: $showAnimation,
-                                  selectedSideMenuTab: $selectedSideMenuTab,
-                                  viewModel: usersViewModel,
-                                  loadedFirstTime: $usersLoadedFirstTime)
-                    
-                case 2:
-                    ToDosView(showMenu: $showMenu,
-                              showAnimation: $showAnimation,
-                              selectedSideMenuTab: $selectedSideMenuTab,
-                              viewModel: toDosViewModel,
-                              loadedFirstTime: $toDosLoadedFirstTime)
-                    
-                case 3:
-                    AboutUsView(showMenu: $showMenu,
-                                showAnimation: $showAnimation,
-                                selectedSideMenuTab: $selectedSideMenuTab)
-                    
-                default: EmptyView()
-                }
+            case 1:
+                
+                UsersView(showMenu: $showMenu,
+                          showAnimation: $showAnimation,
+                          selectedSideMenuTab: $selectedSideMenuTab,
+                          viewModel: usersViewModel,
+                          loadedFirstTime: $usersLoadedFirstTime)
+                
+            case 2:
+                ToDosView(showMenu: $showMenu,
+                          showAnimation: $showAnimation,
+                          selectedSideMenuTab: $selectedSideMenuTab,
+                          viewModel: toDosViewModel,
+                          loadedFirstTime: $toDosLoadedFirstTime)
+                
+            case 3:
+                AboutUsView(showMenu: $showMenu,
+                            showAnimation: $showAnimation,
+                            selectedSideMenuTab: $selectedSideMenuTab)
+                
+            default: EmptyView()
+            }
+        }
+                    .accessibilityHidden(showMenu)
                 
                 SideMenuView(selectedSideMenuTab: $selectedSideMenuTab, showMenu: $showMenu, showAnimation: $showAnimation)
                 

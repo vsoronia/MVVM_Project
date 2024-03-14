@@ -94,6 +94,7 @@ struct HomeView: View {
                 }
             }
         }
+//        .accessibilityLabel("Posts")
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     
     @ObservedObject var signUpViewModel = SignUpViewModel()
+    @Binding var signupViewIsPresented: Bool
     
     var body: some View {
         NavigationStack {
@@ -17,7 +18,7 @@ struct SignUpView: View {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         
-                        TextField("Enter Firstname", text: $signUpViewModel.firstName)
+                        TextField(String.placeholderFirstName, text: $signUpViewModel.firstName)
                             .textFieldStyle(.roundedBorder)
                         Text(signUpViewModel.firstNameErrorMessage)
                             .foregroundColor(.red)
@@ -26,7 +27,7 @@ struct SignUpView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        TextField("Enter Lastname", text: $signUpViewModel.lastName)
+                        TextField(String.placeholderLastName, text: $signUpViewModel.lastName)
                             .textFieldStyle(.roundedBorder)
                         Text(signUpViewModel.lastNameErrorMessage)
                             .foregroundColor(.red)
@@ -35,7 +36,7 @@ struct SignUpView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        TextField("Enter email", text: $signUpViewModel.email)
+                        TextField(String.placeholderEmail, text: $signUpViewModel.email)
                             .textFieldStyle(.roundedBorder)
                         Text(signUpViewModel.emailErrorMessage)
                             .foregroundColor(.red)
@@ -44,7 +45,7 @@ struct SignUpView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        TextField("Enter Your age", text: $signUpViewModel.age)
+                        TextField(String.placeholderAge, text: $signUpViewModel.age)
                             .textFieldStyle(.roundedBorder)
                         Text(signUpViewModel.ageErrorMessage)
                             .foregroundColor(.red)
@@ -52,9 +53,8 @@ struct SignUpView: View {
                             .opacity(signUpViewModel.ageErrorMessage.isEmpty ? 0.0 : 1.0)
                     }
                     
-                    
                     VStack(alignment: .leading) {
-                        SecureField("Enter password", text: $signUpViewModel.password)
+                        SecureField(String.placeholderPassword, text: $signUpViewModel.password)
                             .textFieldStyle(.roundedBorder)
                         
                         Text(signUpViewModel.passwordErrorMessage)
@@ -64,7 +64,7 @@ struct SignUpView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        SecureField("Confirm password", text: $signUpViewModel.confirmPassword)
+                        SecureField(String.placeholderConfirmPassword, text: $signUpViewModel.confirmPassword)
                             .textFieldStyle(.roundedBorder)
                         Text(signUpViewModel.confirmPasswordErrorMessage)
                             .foregroundColor(.red)
@@ -75,9 +75,10 @@ struct SignUpView: View {
                     HStack {
                         Spacer()
                         Button {
+                            signupViewIsPresented.toggle()
                             print("SignUp")
                         } label: {
-                            Label("SignUp", systemImage: "lock.shield")
+                            Label(String.signUp, systemImage: "lock.shield")
                         }
                         .buttonStyle(.bordered)
                         .disabled(!signUpViewModel.isValid)
@@ -86,13 +87,14 @@ struct SignUpView: View {
                     }
                 }
                 .padding()
-                .navigationTitle("SignUp Form")
+                .navigationTitle(String.signUpFormTitle)
             }
             .scrollDismissesKeyboard(.immediately)
         }
     }
 }
 
-#Preview {
-    SignUpView()
-}
+
+//#Preview {
+//    SignUpView()
+//}

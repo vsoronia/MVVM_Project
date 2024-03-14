@@ -28,7 +28,7 @@ class NetworkingService {
             return .failure(.wrong("Invalid url"))
         }
         
-        return await AF.request(url, method: .delete, headers: .init([.init(name: "Authorization", value: "Bearer 467023bee0ee5846310c1bd1f75de70052a92cae617aea1190dd296a17bcb728")]))
+        return await AF.request(url, method: .delete, headers: .init([.init(name: .authName, value: .token)]))
             .serializingString()
             .result
             .mapError { .afError($0) }

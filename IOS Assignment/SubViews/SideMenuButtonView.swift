@@ -26,6 +26,7 @@ struct SideMenuButtonView: View {
                 Image(systemName: "text.justify.left")
                     .font(.title)
                     .foregroundColor(.black)
+                    .accessibilityLabel("tap to open side menu")
             }
         }
     }

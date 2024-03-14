@@ -35,7 +35,7 @@ struct UserCommentsRowView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
-                    .foregroundStyle(LinearGradient(colors:[.colorSeconderyPlaceholder,.colorPlaceholder], startPoint: .topLeading, endPoint: .bottomTrailing) )
+                    .foregroundStyle(LinearGradient(colors:[.colorSecondaryPlaceholder,.colorPlaceholder], startPoint: .topLeading, endPoint: .bottomTrailing) )
                     .clipShape(Circle())
 
                 Spacer()
