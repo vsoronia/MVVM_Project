@@ -26,16 +26,16 @@ enum SideMenuRowViewModel: Int, CaseIterable{
         }
     }
     
-    var iconName: String{
+    var icon: Image{
         switch self {
         case .home:
-            return "house"
+            return ThemeManager.shared.images.sideMenuHomeIcon
         case .users:
-            return "person"
+            return ThemeManager.shared.images.sideMenuUsersIcon
         case .todos:
-            return "list.bullet"
+            return ThemeManager.shared.images.sideMenuTodosIcon
         case .about:
-            return "info.circle"
+            return ThemeManager.shared.images.sideMenuAboutusIcon
         }
     }
 }

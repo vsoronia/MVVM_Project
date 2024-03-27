@@ -57,6 +57,10 @@ extension String {
     static let userDeleteAlertMessage = "delete_user_alert_message".localized(comments: "")
     static let userDeleteConfirm = "user_delete_confirm".localized(comments: "")
     static let userDeleteCancel = "user_delete_cancel".localized(comments: "")
+    
+    //User List Row View
+    static let accessibilityActiveUser = "accessibility_active_user".localized(comments: "")
+    static let accessibilityInactiveUser = "accessibility_inactive_user".localized(comments: "")
 
     //UserPosts View
     static let userWithNoPosts = "user_no_posts".localized(comments: "This user hasn't posts yet")
@@ -66,6 +70,12 @@ extension String {
 
     //UserTodos View
     static let userWithNoTodos = "user_no_todos".localized(comments: "This user hasn't todos yet")
+    
+    //Todo List Row View Model
+    static let todosDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    static let invalidDateFormat = "invalid_date_format".localized(comments: "")
+    static let dueDatePassed = "due_date_passed".localized(comments: "")
+    
     
     // Token networking service
     static let authName = "Authorization"

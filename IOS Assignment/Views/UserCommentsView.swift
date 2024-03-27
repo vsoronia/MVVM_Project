@@ -24,7 +24,7 @@ struct UserCommentsView: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(colors: [.colorBlackLight, .colorBlackDark], startPoint: .topLeading, endPoint: .bottomTrailing)
+            ThemeManager.shared.colors.backgroundGradientHomeTodos
                 .ignoresSafeArea()
             
             switch userCommentsViewModel.state {

@@ -13,7 +13,7 @@ struct AboutUsView: View {
     @Binding var showAnimation: Bool
     @Binding var selectedSideMenuTab: Int
     
-
+    
     var body: some View {
         NavigationStack {
             List {
@@ -24,52 +24,52 @@ struct AboutUsView: View {
                         Text(String.copyrightMessage)
                         Spacer()
                     }
-                    .padding(20)
+                        .padding(20)
                 ) {
                     AboutUsListRowView(rowLabel: .application,
-                                       rowIcon: "apps.iphone",
+                                       rowIcon: ThemeManager.shared.images.applicationIcon,
                                        rowContent: .todosApp,
                                        rowTintColor: .blue)
-
+                    
                     AboutUsListRowView(rowLabel: .compatibility,
-                                       rowIcon: "info.circle",
+                                       rowIcon: ThemeManager.shared.images.compatibilityIcon,
                                        rowContent: .miniOSVersion,
                                        rowTintColor: .red)
-
+                    
                     AboutUsListRowView(rowLabel: .technology,
-                                       rowIcon: "swift",
+                                       rowIcon: ThemeManager.shared.images.technologyIcon,
                                        rowContent: .swiftUI,
                                        rowTintColor: .orange)
-
+                    
                     AboutUsListRowView(rowLabel: .version,
-                                       rowIcon: "gear",
+                                       rowIcon: ThemeManager.shared.images.versionIcon,
                                        rowContent: .appVersion,
                                        rowTintColor: .purple)
-
+                    
                     AboutUsListRowView(rowLabel: .developer,
-                                       rowIcon: "ellipsis.curlybraces",
+                                       rowIcon: ThemeManager.shared.images.developerIcon,
                                        rowContent: .developerName,
                                        rowTintColor: .mint)
-
+                    
                     AboutUsListRowView(rowLabel: .designer,
-                                       rowIcon: "paintpalette",
+                                       rowIcon: ThemeManager.shared.images.designerIcon,
                                        rowContent: .designerName,
                                        rowTintColor: .pink)
-
+                    
                     AboutUsListRowView(rowLabel: .facebook,
-                                       rowIcon: "f.square",
+                                       rowIcon: ThemeManager.shared.images.facebookIcon,
                                        rowTintColor: .indigo,
                                        rowLinkLabel: .todos,
                                        rowLinkDestination: "https://facebook.com")
-
+                    
                     AboutUsListRowView(rowLabel: .instagram,
-                                       rowIcon: "camera.metering.center.weighted",
+                                       rowIcon: ThemeManager.shared.images.instagramIcon,
                                        rowTintColor: .purple,
                                        rowLinkLabel: .todos,
                                        rowLinkDestination: "https://instagram.com")
-
+                    
                     AboutUsListRowView(rowLabel: .contactAndSupport,
-                                       rowIcon: "questionmark.circle",
+                                       rowIcon: ThemeManager.shared.images.contactAndSupportIcon,
                                        rowContent: .contactEmail,
                                        rowTintColor: .blue)
                 }

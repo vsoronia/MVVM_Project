@@ -44,7 +44,7 @@ struct UsersView: View {
         NavigationStack(path: $router.navPath) {
             ZStack {
                 
-                LinearGradient(colors: [.colorBlackMedium, .colorBlackDark], startPoint: .topLeading, endPoint: .bottomTrailing)
+                ThemeManager.shared.colors.backgroundGradientUsers
                     .ignoresSafeArea()
                 
                 switch usersViewModel.state {

@@ -36,18 +36,18 @@ struct HomeListRowView: View {
                     .font(.headline)
                     .foregroundColor(.primary)
                 
-                Image(systemName: "person.circle.fill")
+                ThemeManager.shared.images.placeHolderUserImageIcon
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)
-                    .foregroundStyle(LinearGradient(colors:[.colorSecondaryPlaceholder,.colorPlaceholder], startPoint: .topLeading, endPoint: .bottomTrailing) )
+                    .foregroundStyle(ThemeManager.shared.colors.placeHolderImageGradient)
                     .clipShape(Circle())
                     .accessibilityHidden(true)
 
                 Spacer()
                 
                 if showFullPost{
-                    Image(systemName: "arrow.up.right.and.arrow.down.left.square")
+                    ThemeManager.shared.images.expandedIcon
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 26, height: 26)
@@ -59,7 +59,7 @@ struct HomeListRowView: View {
                 
                 else {
                     
-                    Image(systemName: "arrow.down.left.and.arrow.up.right.square")
+                    ThemeManager.shared.images.expandIcon
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 22, height: 22)

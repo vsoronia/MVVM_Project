@@ -38,7 +38,7 @@ struct ToDosView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                LinearGradient(colors: [.colorBlackLight, .colorBlackDark], startPoint: .topLeading, endPoint: .bottomTrailing)
+                ThemeManager.shared.colors.backgroundGradientHomeTodos
                     .ignoresSafeArea()
                 
                 switch toDosViewModel.state {

@@ -18,7 +18,6 @@ class UsersViewModel: ObservableObject {
     let userManager: UserManager
     
     init(
-
         page: Int
     ) {
 
