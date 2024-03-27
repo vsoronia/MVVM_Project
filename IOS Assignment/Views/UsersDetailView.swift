@@ -34,7 +34,7 @@ struct UsersDetailView: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(colors: [.colorBlackLight, .colorBlackMedium], startPoint: .topLeading, endPoint: .bottomTrailing)
+            ThemeManager.shared.colors.backgroundGradientUsersDetail
                 .ignoresSafeArea()
             CustomCircleView(ShapeColor: .gray, ShapeOpacity: 0.1)
             
@@ -87,7 +87,7 @@ struct UsersDetailView: View {
                         
                         Spacer()
                         
-                        Button(String.userDeleteButton, systemImage: "trash") {
+                        Button(String.userDeleteButton, systemImage: ThemeManager.shared.images.trashIcon) {
                             showAlert.toggle()
                         }
                         .font(.title3)

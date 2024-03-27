@@ -78,7 +78,7 @@ struct SignUpView: View {
                             signupViewIsPresented.toggle()
                             print("SignUp")
                         } label: {
-                            Label(String.signUp, systemImage: "lock.shield")
+                            Label(String.signUp, systemImage: ThemeManager.shared.images.lockShieldIcon)
                         }
                         .buttonStyle(.bordered)
                         .disabled(!signUpViewModel.isValid)

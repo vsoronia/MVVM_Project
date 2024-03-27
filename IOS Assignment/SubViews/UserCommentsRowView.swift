@@ -31,7 +31,7 @@ struct UserCommentsRowView: View {
                     .font(.headline)
                     .foregroundColor(.primary)
                 
-                Image(systemName: "person.circle.fill")
+                ThemeManager.shared.images.placeHolderUserImageIcon
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50)

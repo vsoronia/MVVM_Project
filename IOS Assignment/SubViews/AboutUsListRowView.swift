@@ -10,7 +10,7 @@ import SwiftUI
 struct AboutUsListRowView: View {
     
     @State var rowLabel: String
-    @State var rowIcon: String
+    @State var rowIcon: Image
     @State var rowContent: String? = nil
     @State var rowTintColor: Color
     @State var rowLinkLabel: String? = nil
@@ -38,7 +38,7 @@ struct AboutUsListRowView: View {
                     RoundedRectangle(cornerRadius: 8)
                         .frame(width: 30, height: 30)
                         .foregroundColor(rowTintColor)
-                    Image(systemName: rowIcon)
+                    rowIcon
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
                 }
@@ -51,6 +51,6 @@ struct AboutUsListRowView: View {
 
 
 
-#Preview {
-    AboutUsListRowView(rowLabel: "Contact & Support", rowIcon: "questionmark.circle", rowContent: "vsoro@example.com", rowTintColor: .blue)
-}
+//#Preview {
+//    AboutUsListRowView(rowLabel: "Contact & Support", rowIcon: "questionmark.circle", rowContent: "vsoro@example.com", rowTintColor: .blue)
+//}

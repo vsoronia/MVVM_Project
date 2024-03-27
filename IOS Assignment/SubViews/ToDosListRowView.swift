@@ -35,7 +35,7 @@ struct ToDosListRowView: View {
             Spacer()
             
             let isPending = viewModel.statusIsPending()
-            Image(systemName: isPending.statusSymbol)
+            isPending.statusSymbol
                 .foregroundStyle(Color(isPending.statusColor))
                     .font(.title3)
                     .fontWeight(.bold)

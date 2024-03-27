@@ -67,3 +67,14 @@
 
 //UserTodos View
 "user_no_todos" = "No TODOs yet.";
+
+//User List Row View
+"accessibility_active_user" = "active user";
+"accessibility_active_user" = "inactive user";
+
+//Todo List Row View Model
+"invalid_date_format" = "Invalid date format";
+"due_date_passed" = "Due date passed";
+//"days_left %@" = "%@ days left";
+//"days_left %@" = "%@ hours left";
+//"days_left %@" = "%@ minutes left";

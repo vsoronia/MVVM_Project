@@ -8,14 +8,16 @@
 import Foundation
 
 struct ThemeManager {
-
-  static var shared = ThemeManager()
-
-  private init() {
-    colors = ColorManager()
-  }
-
-  let colors: ColorManager
+    
+    static var shared = ThemeManager()
+    
+    private init() {
+        colors = ColorManager()
+        images = ImageManager()
+    }
+    
+    let colors: ColorManager
+    let images: ImageManager
 }
 
 

@@ -39,18 +39,18 @@ struct UsersListRowView: View {
                     HStack {
                         
                         if isActive {
-                            Image(systemName: "smallcircle.filled.circle.fill")
+                            ThemeManager.shared.images.isActiveUser
                                 .symbolEffect(.pulse.wholeSymbol, options: .repeating)
                                 .foregroundStyle(Color(.green))
                                 .padding(5)
-                                .accessibilityLabel("active user")
+                                .accessibilityLabel(String.accessibilityActiveUser)
                         }
                         
                         else {
-                            Image(systemName: "smallcircle.filled.circle.fill")
+                            ThemeManager.shared.images.isInactiveUser
                                 .foregroundStyle(Color(.gray))
                                 .padding(5)
-                                .accessibilityLabel("inactive user")
+                                .accessibilityLabel(String.accessibilityInactiveUser)
                         }
                         
                         Spacer()
