@@ -8,7 +8,13 @@
 import SwiftUI
 import Alamofire
 
-class NetworkingService {
+protocol NetworkServiceType {
+    func get<T: Codable>(urlString: String) async -> Result<T, MyError>
+    func delete(urlString: String) async -> Result<String, MyError>
+}
+
+
+class NetworkingService: NetworkServiceType {
     
     func get<T: Codable>(urlString: String) async -> Result<T, MyError> {
         
@@ -35,6 +41,7 @@ class NetworkingService {
     }
 }
 
+//Errors file
 enum MyError: LocalizedError {
     case wrong(String)
     case afError(AFError)

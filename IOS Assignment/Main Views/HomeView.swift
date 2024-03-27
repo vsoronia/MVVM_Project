@@ -41,7 +41,7 @@ struct HomeView: View {
         
         NavigationStack {
             ZStack {
-                LinearGradient(colors: [.colorBlackLight, .colorBlackDark], startPoint: .topLeading, endPoint: .bottomTrailing)
+                ThemeManager.shared.colors.backgroundGradientHomeTodos
                     .ignoresSafeArea()
                 
                 switch homeViewModel.state {

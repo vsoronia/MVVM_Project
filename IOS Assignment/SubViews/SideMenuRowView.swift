@@ -17,7 +17,7 @@ struct SideMenuRowView: View {
         ForEach(SideMenuRowViewModel.allCases, id: \.self){ row in
             self.row(
                 isSelected: selectedSideMenuTab == row.rawValue,
-                imageName: row.iconName,
+                screenIcon: row.icon,
                 title: row.title
             ) {
                 selectedSideMenuTab = row.rawValue
@@ -29,7 +29,7 @@ struct SideMenuRowView: View {
     
     func row(
         isSelected: Bool,
-        imageName: String,
+        screenIcon: Image,
         title: String,
         hideDivider: Bool = false,
         action: @escaping ()->()
@@ -44,7 +44,7 @@ struct SideMenuRowView: View {
                         .frame(width: 5)
                     
                     ZStack{
-                        Image(systemName: imageName)
+                        screenIcon
                             .resizable()
                             .renderingMode(.template)
                             .foregroundColor(isSelected ? .black : .gray)

@@ -22,10 +22,10 @@ class ToDosListRowViewModel {
     
     func timeLeft() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.dateFormat = .todosDateFormat
         
         guard let dueDate = formatter.date(from: dueOn) else {
-            return "Invalid date format"
+            return .invalidDateFormat
         }
         
         let currentDateTime = Date()
@@ -39,13 +39,13 @@ class ToDosListRowViewModel {
         } else if let diffMinute = diffComponents.minute, diffMinute > 0 {
             return "\(diffMinute) minutes left"
         } else {
-            return "Due date passed"
+            return .dueDatePassed
         }
     }
     
-    func statusIsPending() -> (statusColor: Color, statusSymbol: String) {
+    func statusIsPending() -> (statusColor: Color, statusSymbol: Image) {
         let statusColor = taskStatus ? Color.gray : .green
-        let statusSymbol = taskStatus ? "ellipsis.circle" : "checkmark.circle"
+        let statusSymbol = taskStatus ? ThemeManager.shared.images.todoIsPending : ThemeManager.shared.images.todoIsCompleted
         return (statusColor, statusSymbol)
     }
 }

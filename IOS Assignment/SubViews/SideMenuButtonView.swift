@@ -18,12 +18,12 @@ struct SideMenuButtonView: View {
             
             if showMenu {
                 
-                Image(systemName: "text.justify")
+                ThemeManager.shared.images.hideSideMenuIcon
                     .font(.title)
                     .foregroundColor(.gray)
                 
             } else {
-                Image(systemName: "text.justify.left")
+                ThemeManager.shared.images.showSideMenuIcon
                     .font(.title)
                     .foregroundColor(.black)
                     .accessibilityLabel("tap to open side menu")
