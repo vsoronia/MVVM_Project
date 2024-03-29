@@ -7,7 +7,16 @@
 
 import SwiftUI
 
-class ToDosListRowViewModel {
+protocol ToDosListRowViewModelType {
+    var user: String { get }
+    var title: String { get }
+    var dueOn: String { get }
+    var taskStatus: Bool { get }
+    func timeLeft() -> String
+    func statusIsPending() -> (statusColor: Color, statusSymbol: Image)
+}
+
+class ToDosListRowViewModel: ToDosListRowViewModelType {
     let user: String
     let title: String
     let dueOn: String

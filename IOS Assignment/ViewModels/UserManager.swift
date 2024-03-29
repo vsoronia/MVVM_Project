@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct UserManager {
+protocol UserManagerType {
+    func fetchPageInfo() async ->  Result<UsersResponse, MyError>
+    func fetchUsers(for page: Int) async ->  Result<UsersResults, MyError>
+}
+
+struct UserManager: UserManagerType {
     
-    let service: NetworkingService
+    let service: NetworkingServiceType
     
-    init(service: NetworkingService = NetworkingService()) {
+    init(service: NetworkingServiceType = NetworkingService()) {
         self.service = service
     }
     

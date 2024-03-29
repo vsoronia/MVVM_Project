@@ -8,13 +8,13 @@
 import SwiftUI
 import Alamofire
 
-protocol NetworkServiceType {
+protocol NetworkingServiceType {
     func get<T: Codable>(urlString: String) async -> Result<T, MyError>
     func delete(urlString: String) async -> Result<String, MyError>
 }
 
 
-class NetworkingService: NetworkServiceType {
+class NetworkingService: NetworkingServiceType {
     
     func get<T: Codable>(urlString: String) async -> Result<T, MyError> {
         
@@ -38,20 +38,5 @@ class NetworkingService: NetworkServiceType {
             .serializingString()
             .result
             .mapError { .afError($0) }
-    }
-}
-
-//Errors file
-enum MyError: LocalizedError {
-    case wrong(String)
-    case afError(AFError)
-    
-    var errorDescription: String? {
-        switch self {
-        case .wrong(let reason):
-            return "MyError: \(reason)"
-        case .afError(let error):
-            return "MyError: AFError: \(error.localizedDescription)"
-        }
     }
 }

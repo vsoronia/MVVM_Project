@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct HomeManager {
+protocol HomeManagerType {
+    func fetchPageInfo() async ->  Result<HomeResponse, MyError>
+    func fetchPosts(for page: Int) async ->  Result<HomePostResults, MyError>
+}
+
+struct HomeManager: HomeManagerType {
     
-    let service: NetworkingService
+    let service: any NetworkingServiceType
     
-    init(service: NetworkingService = NetworkingService()) {
+    init(service: NetworkingServiceType = NetworkingService()) {
         self.service = service
     }
     

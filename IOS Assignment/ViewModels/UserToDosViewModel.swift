@@ -7,16 +7,21 @@
 
 import Foundation
 
+protocol UserToDosViewModelType: ObservableObject {
+    var state: UserToDosViewState { get set }
+    func fetchData(userID: Int) async
+    func userToDosReload(userID: Int)
+}
 
-class UserToDosViewModel: ObservableObject {
+class UserToDosViewModel: UserToDosViewModelType {
     
     @Published var state: UserToDosViewState
-    let userToDosManager: UserToDosManager
+    let userToDosManager: any UserToDosManagerType
     
     
-    init() {
+    init(userToDosManager: UserToDosManagerType = UserToDosManager(service: NetworkingService())) {
         self.state = .loading
-        self.userToDosManager = UserToDosManager(service: NetworkingService())
+        self.userToDosManager = userToDosManager
     }
     
     @MainActor

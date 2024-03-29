@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView<ViewModelType>: View where ViewModelType: HomeViewModelType {
     
     // MARK: - PROPERTIES
+    
     @Binding var showMenu: Bool
     @Binding var showAnimation: Bool
     @Binding var selectedSideMenuTab: Int
-    @ObservedObject var homeViewModel: HomeViewModel
+    @ObservedObject var homeViewModel: ViewModelType
     @State var expandedItems = Set<Int>()
     @Binding var loadedFirstTime: Bool
 
@@ -22,17 +23,14 @@ struct HomeView: View {
         showMenu: Binding<Bool>,
         showAnimation: Binding<Bool>,
         selectedSideMenuTab: Binding<Int>,
-        viewModel: HomeViewModel,
+        viewModel: ViewModelType,
         loadedFirstTime: Binding<Bool>
-
-        
     ) {
         self._showMenu = showMenu
         self._selectedSideMenuTab = selectedSideMenuTab
         self._showAnimation = showAnimation
         self.homeViewModel = viewModel
         self._loadedFirstTime = loadedFirstTime
-
     }
     
     

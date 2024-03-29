@@ -33,27 +33,34 @@ struct MainTabView: View {
                     showAnimation: $showAnimation,
                     selectedSideMenuTab: $selectedSideMenuTab,
                     viewModel: homeViewModel,
-                    loadedFirstTime: $homeLoadedFirstTime)
+                    loadedFirstTime: $homeLoadedFirstTime
+                )
                 
             case 1:
                 
-                UsersView(showMenu: $showMenu,
-                          showAnimation: $showAnimation,
-                          selectedSideMenuTab: $selectedSideMenuTab,
-                          viewModel: usersViewModel,
-                          loadedFirstTime: $usersLoadedFirstTime)
+                UsersView(
+                    showMenu: $showMenu,
+                    showAnimation: $showAnimation,
+                    selectedSideMenuTab: $selectedSideMenuTab,
+                    viewModel: usersViewModel,
+                    loadedFirstTime: $usersLoadedFirstTime
+                )
                 
             case 2:
-                ToDosView(showMenu: $showMenu,
-                          showAnimation: $showAnimation,
-                          selectedSideMenuTab: $selectedSideMenuTab,
-                          viewModel: toDosViewModel,
-                          loadedFirstTime: $toDosLoadedFirstTime)
+                ToDosView(
+                    showMenu: $showMenu,
+                    showAnimation: $showAnimation,
+                    selectedSideMenuTab: $selectedSideMenuTab,
+                    viewModel: toDosViewModel,
+                    loadedFirstTime: $toDosLoadedFirstTime
+                )
                 
             case 3:
-                AboutUsView(showMenu: $showMenu,
-                            showAnimation: $showAnimation,
-                            selectedSideMenuTab: $selectedSideMenuTab)
+                AboutUsView(
+                    showMenu: $showMenu,
+                    showAnimation: $showAnimation,
+                    selectedSideMenuTab: $selectedSideMenuTab
+                )
                 
             default: EmptyView()
             }

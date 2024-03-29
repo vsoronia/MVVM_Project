@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-final class Router: ObservableObject {
-    enum Destination: Codable, Hashable {
-        case userDetails(id: Int)
-        case userPosts(id: Int)
-        case userComments(id: Int)
-        case userTodos(id: Int)
-    }
+protocol RouterType {
+    func navigate(to destination: Destination)
+    func navigateBack()
+    func navigateToRoot()
+}
+
+final class Router: ObservableObject, RouterType {
     
     @Published var navPath = NavigationPath()
     
@@ -28,4 +28,11 @@ final class Router: ObservableObject {
     func navigateToRoot() {
         navPath.removeLast(navPath.count)
     }
+}
+
+enum Destination: Codable, Hashable {
+    case userDetails(id: Int)
+    case userPosts(id: Int)
+    case userComments(id: Int)
+    case userTodos(id: Int)
 }

@@ -7,11 +7,18 @@
 
 import Foundation
 
+protocol HomeViewModelType: ObservableObject {
+    var state: HomeViewState { get set }
+    var page: Int { get set }
+    func fetchData(page: Int) async
+    func fetchMorePosts()
+    func postsReload()
+}
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: HomeViewModelType {
     
     @Published var state: HomeViewState
-    let homeManager: HomeManager
+    let homeManager: any HomeManagerType
     var appendedPosts = [HomePostData]()
     var page: Int
     var pages: Int = 1
@@ -20,13 +27,13 @@ class HomeViewModel: ObservableObject {
     
    
     init(
-        page: Int
-
+        page: Int,
+        homeManager: HomeManagerType = HomeManager(service: NetworkingService())
     )
     {
         self.state = .loading
         self.page = page
-        self.homeManager = HomeManager(service: NetworkingService())
+        self.homeManager = homeManager
     }
     
     @MainActor

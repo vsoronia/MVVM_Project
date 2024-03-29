@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UserCommentsView: View {
+struct UserCommentsView<ViewModelType>: View where ViewModelType: UserCommentsViewModelType {
     
-    @ObservedObject var userCommentsViewModel: UserCommentsViewModel
+    @ObservedObject var userCommentsViewModel: ViewModelType
     let userID: Int
     
     init(
-        viewModel: UserCommentsViewModel,
+        viewModel: ViewModelType,
         userID: Int
     )
     {

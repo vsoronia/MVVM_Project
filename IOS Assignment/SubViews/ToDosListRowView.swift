@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ToDosListRowView: View {
     
-    let viewModel: ToDosListRowViewModel
+    let viewModel: any ToDosListRowViewModelType
         
-        init(viewModel: ToDosListRowViewModel) {
+        init(viewModel: ToDosListRowViewModelType) {
             self.viewModel = viewModel
         }
     

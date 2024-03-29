@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UserPostsView: View {
+struct UserPostsView<ViewModelType>: View where ViewModelType: UserPostsViewModelType {
     
-    @ObservedObject var userPostsViewModel: UserPostsViewModel
+    @ObservedObject var userPostsViewModel: ViewModelType
     let userID: Int
     
     init(
-        viewModel: UserPostsViewModel,
+        viewModel: ViewModelType,
         userID: Int
     )
     {
@@ -73,8 +73,6 @@ struct UserPostsView: View {
 }
 
 
-
-
-#Preview {
-    UserPostsView(viewModel: UserPostsViewModel(), userID: 6265160)
-}
+//#Preview {
+//    UserPostsView(viewModel: UserPostsViewModel(), userID: 6265160)
+//}
