@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct UsersDetailManager {
+protocol UsersDetailManagerType {
+    func fetchUserData(userID: Int) async ->  Result<UsersDetailModel, MyError>
+    func delete(userID: Int) async ->  Result<String, MyError>
+}
+
+struct UsersDetailManager: UsersDetailManagerType {
     
-    let service: NetworkingService
+    let service: NetworkingServiceType
     
-    init(service: NetworkingService = NetworkingService()) {
+    init(service: NetworkingServiceType = NetworkingService()) {
         self.service = service
     }
     

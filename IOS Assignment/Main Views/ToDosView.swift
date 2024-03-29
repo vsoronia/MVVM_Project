@@ -8,11 +8,11 @@
 import SwiftUI
 
 
-struct ToDosView: View {
+struct ToDosView<ViewModelType>: View where ViewModelType: ToDosViewModelType{
     @Binding var showMenu:Bool
     @Binding var showAnimation: Bool
     @Binding var selectedSideMenuTab: Int
-    @ObservedObject var toDosViewModel: ToDosViewModel
+    @ObservedObject var toDosViewModel: ViewModelType
     @Binding var loadedFirstTime: Bool
 
 
@@ -22,17 +22,14 @@ struct ToDosView: View {
         showMenu: Binding<Bool>,
         showAnimation: Binding<Bool>,
         selectedSideMenuTab: Binding<Int>,
-        viewModel: ToDosViewModel,
+        viewModel: ViewModelType,
         loadedFirstTime: Binding<Bool>
-
-        
     ) {
         self._showMenu = showMenu
         self._selectedSideMenuTab = selectedSideMenuTab
         self._showAnimation = showAnimation
         self.toDosViewModel = viewModel
         self._loadedFirstTime = loadedFirstTime
-
     }
     
     var body: some View {

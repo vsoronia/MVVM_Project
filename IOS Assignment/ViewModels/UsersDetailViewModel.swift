@@ -8,16 +8,22 @@
 
 import Foundation
 
-class UsersDetailViewModel: ObservableObject {
+protocol UsersDetailViewModelType: ObservableObject {
+    var state: UsersDetailViewState { get set }
+    func fetchData(userID: Int)
+    func deleteUser(userID: Int) async -> Result<Bool, Error>
+}
+
+class UsersDetailViewModel: UsersDetailViewModelType {
     
     @Published var state: UsersDetailViewState
-    let usersDetailManager: UsersDetailManager
+    let usersDetailManager: any UsersDetailManagerType
     @Published var deleteSucceded = false
     
     
-    init() {
+    init(usersDetailManager: UsersDetailManagerType = UsersDetailManager(service: NetworkingService())) {
         self.state = .loading
-        self.usersDetailManager = UsersDetailManager(service: NetworkingService())
+        self.usersDetailManager = usersDetailManager
     }
     
     @MainActor

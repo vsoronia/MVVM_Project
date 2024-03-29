@@ -8,13 +8,13 @@
 import SwiftUI
 
 
-struct UsersView: View {
+struct UsersView<ViewModelType>: View where ViewModelType: UsersViewModelType {
     
     @ObservedObject var router = Router()
     @Binding var showMenu: Bool
     @Binding var showAnimation: Bool
     @Binding var selectedSideMenuTab: Int
-    @ObservedObject var usersViewModel: UsersViewModel
+    @ObservedObject var usersViewModel: ViewModelType
     @Binding var loadedFirstTime: Bool
     @State var active: Bool = false
     @State var userDeleted: Bool = false
@@ -28,9 +28,8 @@ struct UsersView: View {
         showMenu: Binding<Bool>,
         showAnimation: Binding<Bool>,
         selectedSideMenuTab: Binding<Int>,
-        viewModel: UsersViewModel,
+        viewModel: ViewModelType,
         loadedFirstTime: Binding<Bool>
-        
     ) {
         self._showMenu = showMenu
         self._selectedSideMenuTab = selectedSideMenuTab
@@ -91,7 +90,7 @@ struct UsersView: View {
                     
                 }
             }
-            .navigationDestination(for: Router.Destination.self) { destination in
+            .navigationDestination(for: Destination.self) { destination in
                 
                 switch destination {
                 case .userDetails(let id):

@@ -7,29 +7,25 @@
 
 import SwiftUI
 
-struct UsersDetailView: View {
+struct UsersDetailView<ViewModelType>: View where ViewModelType: UsersDetailViewModelType {
     
     @EnvironmentObject var router: Router
-    @ObservedObject var usersDetailViewModel: UsersDetailViewModel
+    @ObservedObject var usersDetailViewModel: ViewModelType
     @Binding var userDeleted: Bool
     @State var showAlert: Bool = false
     let userID: Int
 
     
     init(
-        viewModel: UsersDetailViewModel,
+        viewModel: ViewModelType,
         userDeleted: Binding<Bool>,
         userID: Int
-        
     )
     {
         self.usersDetailViewModel = viewModel
         self._userDeleted = userDeleted
         self.userID = userID
-        
     }
-    
-    
     
     var body: some View {
         

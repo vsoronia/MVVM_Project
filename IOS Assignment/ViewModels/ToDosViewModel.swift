@@ -7,11 +7,18 @@
 
 import Foundation
 
+protocol ToDosViewModelType: ObservableObject {
+    var state: ToDosViewState { get set }
+    var page: Int { get set }
+    func fetchData(page: Int) async
+    func fetchMoreToDos()
+    func toDosReload()
+}
 
-class ToDosViewModel: ObservableObject {
+class ToDosViewModel: ToDosViewModelType {
     
     @Published var state: ToDosViewState
-    let toDosManager: ToDosManager
+    let toDosManager: any ToDosManagerType
     var appendedToDos = [ToDosData]()
     var page: Int
     var pages: Int = 1
@@ -20,13 +27,13 @@ class ToDosViewModel: ObservableObject {
     
    
     init(
-        page: Int
-
+        page: Int,
+        toDosManager: ToDosManagerType = ToDosManager(service: NetworkingService())
     )
     {
         self.state = .loading
         self.page = page
-        self.toDosManager = ToDosManager(service: NetworkingService())
+        self.toDosManager = toDosManager
     }
     
     @MainActor

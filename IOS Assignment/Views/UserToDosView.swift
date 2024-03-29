@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UserToDosView: View {
+struct UserToDosView<ViewModelType>: View where ViewModelType: UserToDosViewModelType {
 
-    @ObservedObject var userToDosViewModel: UserToDosViewModel
+    @ObservedObject var userToDosViewModel: ViewModelType
     let userID: Int
     
     init(
-        viewModel: UserToDosViewModel,
+        viewModel: ViewModelType,
         userID: Int
     )
     {

@@ -7,17 +7,21 @@
 
 import Foundation
 
+protocol UserPostsViewModelType: ObservableObject {
+    var state: UserPostsViewState { get set }
+    func fetchData(userID: Int) async
+    func userPostsReload(userID: Int)
+}
 
-
-class UserPostsViewModel: ObservableObject {
+class UserPostsViewModel: UserPostsViewModelType {
     
     @Published var state: UserPostsViewState
-    let userPostsManager: UserPostsManager
+    let userPostsManager: any UserPostsManagerType
     
     
-    init() {
+    init(userPostsManager: UserPostsManagerType = UserPostsManager(service: NetworkingService())) {
         self.state = .loading
-        self.userPostsManager = UserPostsManager(service: NetworkingService())
+        self.userPostsManager = userPostsManager
     }
     
     @MainActor

@@ -7,7 +7,15 @@
 
 import Foundation
 
-class UsersViewModel: ObservableObject {
+protocol UsersViewModelType: ObservableObject {
+    var state: UsersViewState { get set }
+    var page: Int { get set }
+    func fetchData(page: Int) async
+    func fetchMorePosts()
+    func usersReload() 
+}
+
+class UsersViewModel: UsersViewModelType {
     
     @Published var state: UsersViewState
     var appendedUsers = [UsersData]()
@@ -15,15 +23,16 @@ class UsersViewModel: ObservableObject {
     var pages: Int = 1
     var currentTotalUsers: Int = 1
     var total: Int = 1
-    let userManager: UserManager
+    let userManager: any UserManagerType
     
     init(
-        page: Int
+        page: Int,
+        userManager: UserManagerType = UserManager(service: NetworkingService())
     ) {
 
         self.state = .loading
         self.page = page
-        self.userManager = UserManager(service: NetworkingService())
+        self.userManager = userManager
     }
     
     @MainActor

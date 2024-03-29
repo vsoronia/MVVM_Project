@@ -7,15 +7,21 @@
 
 import Foundation
 
-class UserCommentsViewModel: ObservableObject {
+protocol UserCommentsViewModelType: ObservableObject {
+    var state: UserCommentsViewState { get set }
+    func fetchData(userID: Int) async
+    func userCommentsReload(userID: Int)
+}
+
+class UserCommentsViewModel: UserCommentsViewModelType {
     
     @Published var state: UserCommentsViewState
-    let userCommentsManager: UserCommentsManager
+    let userCommentsManager: any UserCommentsManagerType
     
     
-    init() {
+    init(userCommentsManager: UserCommentsManagerType = UserCommentsManager(service: NetworkingService())) {
         self.state = .loading
-        self.userCommentsManager = UserCommentsManager(service: NetworkingService())
+        self.userCommentsManager = userCommentsManager
     }
     
     @MainActor

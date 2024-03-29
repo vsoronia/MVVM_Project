@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct ToDosManager {
+protocol ToDosManagerType {
+    func fetchToDosInfo() async ->  Result<ToDosResponse, MyError>
+    func fetchToDos(for page: Int) async ->  Result<ToDosResults, MyError>
+}
+
+struct ToDosManager: ToDosManagerType {
     
-    let service: NetworkingService
+    let service: NetworkingServiceType
     
-    init(service: NetworkingService = NetworkingService()) {
+    init(service: NetworkingServiceType = NetworkingService()) {
         self.service = service
     }
     
