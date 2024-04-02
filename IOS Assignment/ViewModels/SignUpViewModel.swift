@@ -8,7 +8,29 @@
 import Foundation
 import Combine
 
-final class SignUpViewModel: ObservableObject {
+protocol SignUpViewModelType: ObservableObject {
+    var firstName: String { get set }
+    var lastName: String { get set }
+    var age: String { get set }
+    var email: String { get set }
+    var password: String { get set }
+    var confirmPassword: String { get set }
+    
+    var isValid: Bool { get set }
+    
+    var firstNameErrorMessage: String { get set }
+    var lastNameErrorMessage: String { get set }
+    var ageErrorMessage: String { get set }
+    var emailErrorMessage: String { get set }
+    var passwordErrorMessage: String { get set }
+    var confirmPasswordErrorMessage: String { get set }
+    
+    func isPasswordStrong(password: String) -> Bool
+    func containsCharSet(text : String, set: CharacterSet) -> Bool
+}
+
+final class SignUpViewModel: SignUpViewModelType {
+    
     @Published var firstName = ""
     @Published var lastName = ""
     @Published var age = ""
