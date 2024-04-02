@@ -33,6 +33,7 @@
 		1F7255B42BA2F1EF00DAF0EA /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7255B32BA2F1EF00DAF0EA /* ThemeManager.swift */; };
 		1F7255B62BA2F22B00DAF0EA /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7255B52BA2F22B00DAF0EA /* ColorManager.swift */; };
 		1F7255B82BA2F24300DAF0EA /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7255B72BA2F24300DAF0EA /* ImageManager.swift */; };
+		1F780E3D2BBA8EAC00D1BCF3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780E3C2BBA8EAC00D1BCF3 /* SwiftUIView.swift */; };
 		1F7E25B02B60FB0B00345841 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E25AF2B60FB0B00345841 /* NavigationBarModifier.swift */; };
 		1F7E25B22B61083200345841 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E25B12B61083200345841 /* NetworkingService.swift */; };
 		1F7E25B52B611D7B00345841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1F7E25B42B611D7B00345841 /* Alamofire */; };
@@ -104,6 +105,7 @@
 		1F7255B32BA2F1EF00DAF0EA /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1F7255B52BA2F22B00DAF0EA /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		1F7255B72BA2F24300DAF0EA /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		1F780E3C2BBA8EAC00D1BCF3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		1F7E25AF2B60FB0B00345841 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		1F7E25B12B61083200345841 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		1F874CF42B84F2FE00406CE3 /* UserToDosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToDosManager.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				1FAC8DA52B7A337C00C94302 /* UserPostsListRowView.swift */,
 				1FB142602B88C31500F0E563 /* UserCommentsRowView.swift */,
 				1FB142652B8E20D100F0E563 /* CustomCircleView.swift */,
+				1F780E3C2BBA8EAC00D1BCF3 /* SwiftUIView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1FD1D1892B56F5EB0038A73C /* IOS_AssignmentApp.swift in Sources */,
 				1F7255B42BA2F1EF00DAF0EA /* ThemeManager.swift in Sources */,
 				1FAC8DA22B7A2BCC00C94302 /* UserPostsManager.swift in Sources */,
+				1F780E3D2BBA8EAC00D1BCF3 /* SwiftUIView.swift in Sources */,
 				1FB142592B88B95A00F0E563 /* UserCommentsModel.swift in Sources */,
 				1F1A462A2B580F34005D5350 /* HomeViewModel.swift in Sources */,
 				1F0C15262B7218A200CE5303 /* UsersDetailModel.swift in Sources */,

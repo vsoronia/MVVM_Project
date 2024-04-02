@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct SignUpView<ViewModelType>: View where ViewModelType: SignUpViewModelType{
     
-    @ObservedObject var signUpViewModel = SignUpViewModel()
+    @ObservedObject var signUpViewModel: ViewModelType
     @Binding var signupViewIsPresented: Bool
+    
+    init(signUpViewModel: ViewModelType = SignUpViewModel(),
+         signupViewIsPresented: Binding<Bool>)
+    {
+        self.signUpViewModel = signUpViewModel
+        self._signupViewIsPresented = signupViewIsPresented
+    }
     
     var body: some View {
         NavigationStack {
