@@ -67,9 +67,9 @@ struct HomeView<ViewModelType>: View where ViewModelType: HomeViewModelType {
                             ProgressView()
                                 .padding(.horizontal, 200)
                                 .onAppear() {
-                                    
-                                    homeViewModel.fetchMorePosts()
-                                    
+                                    Task{
+                                        await homeViewModel.fetchMorePosts()
+                                    }
                                 }
                         }
                     }

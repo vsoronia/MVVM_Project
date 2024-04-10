@@ -53,7 +53,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var validFirstNamePublisher: AnyPublisher<Bool, Never> {
         $firstName
-            .dropFirst(2)
+//            .dropFirst(2)
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { $0.count >= 3 }
             .eraseToAnyPublisher()
@@ -61,7 +61,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var validLastNamePublisher: AnyPublisher<Bool, Never> {
         $lastName
-            .dropFirst(2)
+//            .dropFirst(2)
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { $0.count >= 3 }
             .eraseToAnyPublisher()
@@ -78,7 +78,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var validEmailPublisher: AnyPublisher<Bool, Never> {
         $email
-            .dropFirst(2)
+//            .dropFirst(2)
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { email in
                 let emailPredicate = StringUtils.emailPredicate()
@@ -90,7 +90,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var validAgePublisher: AnyPublisher<Bool, Never> {
         $age
-            .dropFirst()
+//            .dropFirst()
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { age in
                 let ageInt = Int(age) ?? 0
@@ -105,7 +105,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var passLengthPublisher: AnyPublisher<Bool, Never> {
         $password
-            .dropFirst(2)
+//            .dropFirst(2)
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map { $0.count >= 8 }
             .eraseToAnyPublisher()
@@ -113,7 +113,7 @@ final class SignUpViewModel: SignUpViewModelType {
     
     private var passStrengthPublisher: AnyPublisher<Bool, Never> {
         $password
-            .dropFirst(2)
+//            .dropFirst(2)
             .debounce(for: 0.2, scheduler: RunLoop.main)
             .map {password in self.isPasswordStrong(password: password) }
             .eraseToAnyPublisher()
