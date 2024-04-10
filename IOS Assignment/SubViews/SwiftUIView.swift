@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct SwiftUIView: View {
     
     @State var position = 0
+    @State var timer: Timer?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,23 +44,24 @@ struct SwiftUIView: View {
                         .frame(width: 50, height: 50)
 
                 }
+                .onAppear{trigerTimer()}
                 .padding()
                 .border(.red)
         
-        Button(action: 
-                { withAnimation(.easeInOut(duration: 1.0)) { if position<3
-            {position += 1}
-            else {
-                position = 0
-            }}}
-                ,
-               label: {Text("Solve")
-                .padding(4)
-                .border(Color.black)
-                .font(.title3)
-        })
+        
         
     }
+    func trigerTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in self.updatePosition()
+                }
+    }
+    
+    func updatePosition() {
+        withAnimation(.easeInOut(duration: 1.0)) { if position<3
+        {position += 1}
+        else {
+            position = 0
+        }}}
     
     func testingText(_ d: ViewDimensions) -> CGFloat {
         if position == 0 {

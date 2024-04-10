@@ -9,16 +9,22 @@ import Foundation
 
 protocol HomeViewModelType: ObservableObject {
     var state: HomeViewState { get set }
+    var homeManager: any HomeManagerType { get set }
+    var appendedPosts: [HomePostData] { get set }
     var page: Int { get set }
+    var pages: Int { get set }
+    var currentTotalPosts: Int { get set }
+    var total: Int { get set }
+    
     func fetchData(page: Int) async
-    func fetchMorePosts()
+    func fetchMorePosts() async
     func postsReload()
 }
 
 class HomeViewModel: HomeViewModelType {
     
     @Published var state: HomeViewState
-    let homeManager: any HomeManagerType
+    var homeManager: any HomeManagerType
     var appendedPosts = [HomePostData]()
     var page: Int
     var pages: Int = 1
@@ -65,19 +71,15 @@ class HomeViewModel: HomeViewModelType {
     }
     
     @MainActor
-    func fetchMorePosts() {
+    func fetchMorePosts() async {
         
-        Task {
-            
             if page < pages && currentTotalPosts < total {
-                
                 page += 1
-                
                 await fetchData(page: page)
 
             }
-        }
     }
+    
     @MainActor
     func postsReload()  {
         Task{
