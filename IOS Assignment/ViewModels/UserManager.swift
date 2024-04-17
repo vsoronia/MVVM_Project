@@ -16,7 +16,7 @@ struct UserManager: UserManagerType {
     
     let service: NetworkingServiceType
     
-    init(service: NetworkingServiceType = NetworkingService()) {
+    init(service: NetworkingServiceType) {
         self.service = service
     }
     

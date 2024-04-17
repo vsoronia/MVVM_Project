@@ -21,7 +21,7 @@ class UsersDetailViewModel: UsersDetailViewModelType {
     @Published var deleteSucceded = false
     
     
-    init(usersDetailManager: UsersDetailManagerType = UsersDetailManager(service: NetworkingService())) {
+    init(usersDetailManager: UsersDetailManagerType) {
         self.state = .loading
         self.usersDetailManager = usersDetailManager
     }

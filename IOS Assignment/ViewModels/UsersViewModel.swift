@@ -26,8 +26,8 @@ class UsersViewModel: UsersViewModelType {
     let userManager: any UserManagerType
     
     init(
-        page: Int,
-        userManager: UserManagerType = UserManager(service: NetworkingService())
+        page: Int = 1,
+        userManager: UserManagerType
     ) {
 
         self.state = .loading

@@ -19,7 +19,7 @@ class UserPostsViewModel: UserPostsViewModelType {
     let userPostsManager: any UserPostsManagerType
     
     
-    init(userPostsManager: UserPostsManagerType = UserPostsManager(service: NetworkingService())) {
+    init(userPostsManager: UserPostsManagerType) {
         self.state = .loading
         self.userPostsManager = userPostsManager
     }

@@ -16,7 +16,7 @@ struct ToDosManager: ToDosManagerType {
     
     let service: NetworkingServiceType
     
-    init(service: NetworkingServiceType = NetworkingService()) {
+    init(service: NetworkingServiceType) {
         self.service = service
     }
     

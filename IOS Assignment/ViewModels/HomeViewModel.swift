@@ -33,8 +33,8 @@ class HomeViewModel: HomeViewModelType {
     
    
     init(
-        page: Int,
-        homeManager: HomeManagerType = HomeManager(service: NetworkingService())
+        page: Int = 1,
+        homeManager: HomeManagerType
     )
     {
         self.state = .loading

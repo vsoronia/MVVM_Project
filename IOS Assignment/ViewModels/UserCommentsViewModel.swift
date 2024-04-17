@@ -19,7 +19,7 @@ class UserCommentsViewModel: UserCommentsViewModelType {
     let userCommentsManager: any UserCommentsManagerType
     
     
-    init(userCommentsManager: UserCommentsManagerType = UserCommentsManager(service: NetworkingService())) {
+    init(userCommentsManager: UserCommentsManagerType) {
         self.state = .loading
         self.userCommentsManager = userCommentsManager
     }
