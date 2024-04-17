@@ -27,8 +27,8 @@ class ToDosViewModel: ToDosViewModelType {
     
    
     init(
-        page: Int,
-        toDosManager: ToDosManagerType = ToDosManager(service: NetworkingService())
+        page: Int = 1,
+        toDosManager: ToDosManagerType
     )
     {
         self.state = .loading

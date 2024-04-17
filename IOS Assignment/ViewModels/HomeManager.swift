@@ -8,15 +8,17 @@
 import Foundation
 
 protocol HomeManagerType {
+    var service: any NetworkingServiceType { get set }
+    
     func fetchPageInfo() async ->  Result<HomeResponse, MyError>
     func fetchPosts(for page: Int) async ->  Result<HomePostResults, MyError>
 }
 
 struct HomeManager: HomeManagerType {
     
-    let service: any NetworkingServiceType
+    var service: any NetworkingServiceType
     
-    init(service: NetworkingServiceType = NetworkingService()) {
+    init(service: NetworkingServiceType) {
         self.service = service
     }
     

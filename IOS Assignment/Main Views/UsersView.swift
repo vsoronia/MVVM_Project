@@ -18,10 +18,10 @@ struct UsersView<ViewModelType>: View where ViewModelType: UsersViewModelType {
     @Binding var loadedFirstTime: Bool
     @State var active: Bool = false
     @State var userDeleted: Bool = false
-    let usersDetailViewModel = UsersDetailViewModel()
-    let userPostsViewModel = UserPostsViewModel()
-    let userToDosViewModel = UserToDosViewModel()
-    let userCommentsViewModel = UserCommentsViewModel()
+    let usersDetailViewModel: UsersDetailViewModel = assembler.resolver.resolve(UsersDetailViewModel.self)!
+    let userPostsViewModel: UserPostsViewModel = assembler.resolver.resolve(UserPostsViewModel.self)!
+    let userToDosViewModel: UserToDosViewModel = assembler.resolver.resolve(UserToDosViewModel.self)!
+    let userCommentsViewModel: UserCommentsViewModel = assembler.resolver.resolve(UserCommentsViewModel.self)!
 
     
     init(

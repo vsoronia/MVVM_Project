@@ -9,7 +9,7 @@ import Foundation
 
 
 struct MockHomeManager: HomeManagerType {
-    let service: NetworkingServiceType
+    var service: NetworkingServiceType
 
     init(service: NetworkingServiceType = MockNetworkingService()) {
         self.service = service

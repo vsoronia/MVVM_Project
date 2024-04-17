@@ -19,7 +19,7 @@ class UserToDosViewModel: UserToDosViewModelType {
     let userToDosManager: any UserToDosManagerType
     
     
-    init(userToDosManager: UserToDosManagerType = UserToDosManager(service: NetworkingService())) {
+    init(userToDosManager: UserToDosManagerType) {
         self.state = .loading
         self.userToDosManager = userToDosManager
     }
