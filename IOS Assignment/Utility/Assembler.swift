@@ -34,4 +34,4 @@ class ServiceAssembly: Assembly {
     }
 }
 
-public let assembler = Assembler([ServiceAssembly()])
+//public let serviceAssembler = Assembler([ServiceAssembly()])

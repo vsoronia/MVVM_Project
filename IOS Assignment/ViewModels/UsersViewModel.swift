@@ -11,7 +11,7 @@ protocol UsersViewModelType: ObservableObject {
     var state: UsersViewState { get set }
     var page: Int { get set }
     func fetchData(page: Int) async
-    func fetchMorePosts()
+    func fetchMoreUsers() async
     func usersReload() 
 }
 
@@ -66,19 +66,16 @@ class UsersViewModel: UsersViewModelType {
     }
     
     @MainActor
-    func fetchMorePosts() {
-        
-        Task {
+    func fetchMoreUsers() async {
             
             if page < pages && currentTotalUsers < total {
                 
                 page += 1
                 
                 await fetchData(page: page)
-                
-            }
         }
     }
+    
     @MainActor
     func usersReload()  {
         Task{

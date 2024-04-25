@@ -16,9 +16,21 @@ struct MainTabView: View {
     @State var usersLoadedFirstTime: Bool = true
     @State var toDosLoadedFirstTime: Bool = true
     
-    let homeViewModel: HomeViewModel = assembler.resolver.resolve(HomeViewModel.self)!
-    let usersViewModel: UsersViewModel = assembler.resolver.resolve(UsersViewModel.self)!
-    let toDosViewModel: ToDosViewModel = assembler.resolver.resolve(ToDosViewModel.self)!
+    let homeViewModel: HomeViewModel
+    let usersViewModel: UsersViewModel
+    let toDosViewModel: ToDosViewModel
+    
+    init(
+        homeViewModel: HomeViewModel,
+         usersViewModel: UsersViewModel,
+         toDosViewModel: ToDosViewModel
+    )
+    {
+        print("MainTab")
+        self.homeViewModel = homeViewModel
+        self.usersViewModel = usersViewModel
+        self.toDosViewModel = toDosViewModel
+    }
     
     var body: some View {
         

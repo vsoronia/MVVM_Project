@@ -6,7 +6,6 @@
 //
 
 import XCTest
-
 @testable import IOS_Assignment
 
 
@@ -20,6 +19,9 @@ class HomeViewModelTests: XCTestCase {
         HomePostData(id: 117105, user_id: 6825902, title: "Cupiditas pauci absorbeo patior nobis vestrum sub.", body: "Curiositas tremo credo. Adicio timor vapulus. Illo somnus adulescens. Deserunt corporis abduco. Ait adimpleo venio. Vesica comptus bellum. Ustulo absorbeo absens. Vestigium cattus qui. Alii tabula vita. Ter consectetur neque. Viduata admiratio textor.")
     ]
     
+    override func setUp() async throws {
+        print("HomeViewModelTests setup")
+    }
     
     func testBoundaryConditions() async {
         await viewModel.fetchData(page: viewModel.pages)
@@ -59,7 +61,6 @@ class HomeViewModelTests: XCTestCase {
 
         switch viewModel.state {
         case .posts(let posts):
-            print(posts)
             XCTAssertEqual(posts.count, 2*expectedPosts.count)
             XCTAssertEqual(posts, expectedPosts + expectedPosts)
         default:
