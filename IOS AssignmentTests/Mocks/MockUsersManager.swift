@@ -7,6 +7,8 @@
 
 import Foundation
 
+@testable import IOS_Assignment
+
 struct MockUsersManager: UserManagerType {
     var service: NetworkingServiceType
 

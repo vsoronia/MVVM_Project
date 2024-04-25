@@ -7,6 +7,8 @@
 
 import Foundation
 
+@testable import IOS_Assignment
+
 class MockNetworkingService: NetworkingServiceType {
     
     func get<T: Codable>(urlString: String) async -> Result<T, MyError> {

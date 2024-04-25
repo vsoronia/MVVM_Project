@@ -9,21 +9,27 @@ import Foundation
 import Swinject
 
 protocol GraphControllerType {
-    var assembler: Assembler { get set}
-    func loadAssembly(_ : [Assembly])
+    var assembler: Assembler { get }
+    func loadAssemblies(_ : [Assembly])
 }
 
-struct GraphController: GraphControllerType {
+class GraphController: GraphControllerType {
     var assembler: Assembler
-    func loadAssembly(_ assemblies: [Assembly]) {
+    func loadAssemblies(_ assemblies: [Assembly]) {
+        assembler = Assembler()
         assembler.apply(assemblies: assemblies)
     }
     
     static var shared = GraphController()
     
     private init() {
-        assembler = Assembler([ServiceAssembly()])
+        assembler = Assembler()
     }
 }
 
-
+extension GraphController {
+  
+  func resolve<T>(_ type: T.Type) -> T {
+    assembler.resolver.resolve(type)!
+  }
+}

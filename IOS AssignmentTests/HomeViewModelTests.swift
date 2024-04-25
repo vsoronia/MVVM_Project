@@ -8,9 +8,10 @@
 import XCTest
 @testable import IOS_Assignment
 
-
 class HomeViewModelTests: XCTestCase {
     
+//    var graphController: GraphController!
+  
     let viewModel = HomeViewModel(page: 1, homeManager: MockHomeManager(service: MockNetworkingService()))
     
     let expectedPosts = [
@@ -20,7 +21,12 @@ class HomeViewModelTests: XCTestCase {
     ]
     
     override func setUp() async throws {
-        print("HomeViewModelTests setup")
+//      graphController = GraphController.shared
+//      graphController.loadAssemblies([MockAssembly()])
+    }
+  
+    override func tearDown() async throws {
+//        graphController = nil
     }
     
     func testBoundaryConditions() async {
@@ -29,6 +35,7 @@ class HomeViewModelTests: XCTestCase {
         await viewModel.fetchMorePosts()
         XCTAssertEqual(viewModel.page, viewModel.pages)
     }
+  
     func testDataOrder() async {
         
         await viewModel.fetchData(page: 1)

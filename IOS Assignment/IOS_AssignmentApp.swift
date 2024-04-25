@@ -11,19 +11,26 @@ import SwiftUI
 struct IOS_AssignmentApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    init() {
-        print("IOS_AssignmentApp")
-    }
-    
+  
+    private let graphController = GraphController.shared
+  
+    @State private var isActive = false
     var body: some Scene {
-        WindowGroup {
-            
+      WindowGroup {
+          if isActive {
             MainTabView(
-                homeViewModel: GraphController.shared.assembler.resolver.resolve(HomeViewModel.self)!,
-                usersViewModel: GraphController.shared.assembler.resolver.resolve(UsersViewModel.self)!,
-                toDosViewModel: GraphController.shared.assembler.resolver.resolve(ToDosViewModel.self)!
+              homeViewModel: graphController.resolve(HomeViewModel.self),
+              usersViewModel: graphController.resolve(UsersViewModel.self),
+              toDosViewModel: graphController.resolve(ToDosViewModel.self)
             )
-        }
+          } else {
+              Text("iOS Assignment")
+              .onAppear {
+                  DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                      self.isActive = true
+                  }
+              }
+          }
+      }
     }
 }

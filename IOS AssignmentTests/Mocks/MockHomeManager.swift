@@ -7,6 +7,7 @@
 
 import Foundation
 
+@testable import IOS_Assignment
 
 struct MockHomeManager: HomeManagerType {
     var service: NetworkingServiceType
