@@ -116,7 +116,7 @@ struct UsersDetailView<ViewModelType>: View where ViewModelType: UsersDetailView
         }
         
         .task {
-            usersDetailViewModel.fetchData(userID: userID)
+            await usersDetailViewModel.fetchData(userID: userID)
             
         }
     }

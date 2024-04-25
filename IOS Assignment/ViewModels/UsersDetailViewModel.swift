@@ -10,7 +10,7 @@ import Foundation
 
 protocol UsersDetailViewModelType: ObservableObject {
     var state: UsersDetailViewState { get set }
-    func fetchData(userID: Int)
+    func fetchData(userID: Int) async
     func deleteUser(userID: Int) async -> Result<Bool, Error>
 }
 
@@ -27,10 +27,8 @@ class UsersDetailViewModel: UsersDetailViewModelType {
     }
     
     @MainActor
-    func fetchData(userID: Int) {
+    func fetchData(userID: Int) async {
         
-        Task{
-            
             let usersDetailResults = await usersDetailManager.fetchUserData(userID: userID)
             switch usersDetailResults {
             case .success(let usersResults):
@@ -41,7 +39,6 @@ class UsersDetailViewModel: UsersDetailViewModelType {
                 self.state = .error(error.localizedDescription)
                 print(error)
                 break
-            }
         }
     }
     

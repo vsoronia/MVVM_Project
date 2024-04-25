@@ -13,7 +13,7 @@ struct UsersResults: Codable {
     let data: [UsersData]
 }
 
-struct UsersData: Codable, Identifiable {
+struct UsersData: Codable, Identifiable, Equatable {
     let id: Int
     let name, email: String
     let gender: String

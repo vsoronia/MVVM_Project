@@ -18,10 +18,10 @@ struct UsersView<ViewModelType>: View where ViewModelType: UsersViewModelType {
     @Binding var loadedFirstTime: Bool
     @State var active: Bool = false
     @State var userDeleted: Bool = false
-    let usersDetailViewModel: UsersDetailViewModel = assembler.resolver.resolve(UsersDetailViewModel.self)!
-    let userPostsViewModel: UserPostsViewModel = assembler.resolver.resolve(UserPostsViewModel.self)!
-    let userToDosViewModel: UserToDosViewModel = assembler.resolver.resolve(UserToDosViewModel.self)!
-    let userCommentsViewModel: UserCommentsViewModel = assembler.resolver.resolve(UserCommentsViewModel.self)!
+    let usersDetailViewModel: UsersDetailViewModel = GraphController.shared.assembler.resolver.resolve(UsersDetailViewModel.self)!
+    let userPostsViewModel: UserPostsViewModel = GraphController.shared.assembler.resolver.resolve(UserPostsViewModel.self)!
+    let userToDosViewModel: UserToDosViewModel = GraphController.shared.assembler.resolver.resolve(UserToDosViewModel.self)!
+    let userCommentsViewModel: UserCommentsViewModel = GraphController.shared.assembler.resolver.resolve(UserCommentsViewModel.self)!
 
     
     init(
@@ -68,7 +68,7 @@ struct UsersView<ViewModelType>: View where ViewModelType: UsersViewModelType {
                                 .padding(.horizontal, 200)
                                 .onAppear() {
                                     
-                                    usersViewModel.fetchMorePosts()
+                                    Task{await usersViewModel.fetchMoreUsers()}
                                     
                                 }
                         }

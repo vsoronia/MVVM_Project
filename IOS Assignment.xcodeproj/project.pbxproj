@@ -39,7 +39,6 @@
 		1F780E3D2BBA8EAC00D1BCF3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780E3C2BBA8EAC00D1BCF3 /* SwiftUIView.swift */; };
 		1F780E402BBD3AC300D1BCF3 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780E3F2BBD3AC300D1BCF3 /* MockNetworkingService.swift */; };
 		1F780E442BBD3D5600D1BCF3 /* MockHomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780E432BBD3D5600D1BCF3 /* MockHomeManager.swift */; };
-		1F780E482BBFDF1000D1BCF3 /* MockHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F780E472BBFDF1000D1BCF3 /* MockHomeViewModel.swift */; };
 		1F7E25B02B60FB0B00345841 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E25AF2B60FB0B00345841 /* NavigationBarModifier.swift */; };
 		1F7E25B22B61083200345841 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E25B12B61083200345841 /* NetworkingService.swift */; };
 		1F7E25B52B611D7B00345841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1F7E25B42B611D7B00345841 /* Alamofire */; };
@@ -65,6 +64,15 @@
 		1FD1D18D2B56F5ED0038A73C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD1D18C2B56F5ED0038A73C /* Assets.xcassets */; };
 		1FD1D1902B56F5ED0038A73C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD1D18F2B56F5ED0038A73C /* Preview Assets.xcassets */; };
 		1FD1D1A52B57E6FC0038A73C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1D1A42B57E6FC0038A73C /* SideMenuView.swift */; };
+		1FD2031B2BD00A3C00D5544A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD2031A2BD00A3C00D5544A /* SnapshotTesting */; };
+		1FD2031D2BD1072900D5544A /* SnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2031C2BD1072900D5544A /* SnapshotTest.swift */; };
+		1FD203212BD63D0A00D5544A /* MockUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD203202BD63D0A00D5544A /* MockUsersManager.swift */; };
+		1FD203232BD6401000D5544A /* MockToDosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD203222BD6401000D5544A /* MockToDosManager.swift */; };
+		1FD203252BD6457E00D5544A /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD203242BD6457E00D5544A /* UsersViewModelTests.swift */; };
+		1FD203272BD66D3A00D5544A /* MockUsersDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD203262BD66D3A00D5544A /* MockUsersDetailManager.swift */; };
+		1FD203292BD798D400D5544A /* MockAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD203282BD798D400D5544A /* MockAssembler.swift */; };
+		1FD2032B2BD7A33A00D5544A /* GraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2032A2BD7A33A00D5544A /* GraphController.swift */; };
+		1FD2032D2BD7E14A00D5544A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2032C2BD7E14A00D5544A /* AppDelegate.swift */; };
 		1FDAD3162BA05DA600CC2C1F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAD3152BA05DA600CC2C1F /* Strings.swift */; };
 		1FDAD3172BA0683700CC2C1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FDAD3192BA0683700CC2C1F /* Localizable.strings */; };
 		1FE70C412B5FA84200E5BDBD /* SideMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE70C402B5FA84200E5BDBD /* SideMenuButtonView.swift */; };
@@ -116,7 +124,6 @@
 		1F780E3C2BBA8EAC00D1BCF3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		1F780E3F2BBD3AC300D1BCF3 /* MockNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
 		1F780E432BBD3D5600D1BCF3 /* MockHomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeManager.swift; sourceTree = "<group>"; };
-		1F780E472BBFDF1000D1BCF3 /* MockHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewModel.swift; sourceTree = "<group>"; };
 		1F7E25AF2B60FB0B00345841 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		1F7E25B12B61083200345841 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		1F874CF42B84F2FE00406CE3 /* UserToDosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToDosManager.swift; sourceTree = "<group>"; };
@@ -142,6 +149,14 @@
 		1FD1D18C2B56F5ED0038A73C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FD1D18F2B56F5ED0038A73C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FD1D1A42B57E6FC0038A73C /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		1FD2031C2BD1072900D5544A /* SnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTest.swift; sourceTree = "<group>"; };
+		1FD203202BD63D0A00D5544A /* MockUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersManager.swift; sourceTree = "<group>"; };
+		1FD203222BD6401000D5544A /* MockToDosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDosManager.swift; sourceTree = "<group>"; };
+		1FD203242BD6457E00D5544A /* UsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelTests.swift; sourceTree = "<group>"; };
+		1FD203262BD66D3A00D5544A /* MockUsersDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersDetailManager.swift; sourceTree = "<group>"; };
+		1FD203282BD798D400D5544A /* MockAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssembler.swift; sourceTree = "<group>"; };
+		1FD2032A2BD7A33A00D5544A /* GraphController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphController.swift; sourceTree = "<group>"; };
+		1FD2032C2BD7E14A00D5544A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FDAD3152BA05DA600CC2C1F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1FDAD3182BA0683700CC2C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FE70C402B5FA84200E5BDBD /* SideMenuButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuButtonView.swift; sourceTree = "<group>"; };
@@ -155,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD2031B2BD00A3C00D5544A /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +192,8 @@
 				1F780E3E2BBD3A2100D1BCF3 /* Mocks */,
 				1F31E2B12B90C216002BCDDA /* HomeViewModelTests.swift */,
 				1F1498202BC66D3E00DDEAA8 /* SignUpViewModelTests.swift */,
+				1FD2031C2BD1072900D5544A /* SnapshotTest.swift */,
+				1FD203242BD6457E00D5544A /* UsersViewModelTests.swift */,
 			);
 			path = "IOS AssignmentTests";
 			sourceTree = "<group>";
@@ -185,7 +203,9 @@
 			children = (
 				1F780E3F2BBD3AC300D1BCF3 /* MockNetworkingService.swift */,
 				1F780E432BBD3D5600D1BCF3 /* MockHomeManager.swift */,
-				1F780E472BBFDF1000D1BCF3 /* MockHomeViewModel.swift */,
+				1FD203202BD63D0A00D5544A /* MockUsersManager.swift */,
+				1FD203222BD6401000D5544A /* MockToDosManager.swift */,
+				1FD203262BD66D3A00D5544A /* MockUsersDetailManager.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -235,7 +255,9 @@
 				1FD1D19B2B57C6830038A73C /* ViewModels */,
 				1FD1D1A62B5804700038A73C /* Modifiers */,
 				1FD1D1882B56F5EB0038A73C /* IOS_AssignmentApp.swift */,
+				1FD2032A2BD7A33A00D5544A /* GraphController.swift */,
 				1F497D6F2B593A5100017514 /* MainTabView.swift */,
+				1FD2032C2BD7E14A00D5544A /* AppDelegate.swift */,
 				1FAC8DA92B7B7FAD00C94302 /* Router.swift */,
 				1FD1D18C2B56F5ED0038A73C /* Assets.xcassets */,
 				1FDAD30E2BA0488D00CC2C1F /* Utility */,
@@ -332,6 +354,7 @@
 				1F7255B72BA2F24300DAF0EA /* ImageManager.swift */,
 				1F5EDD432BB40BCE00A79E5A /* Errors.swift */,
 				1F1498422BCD6AFA00DDEAA8 /* Assembler.swift */,
+				1FD203282BD798D400D5544A /* MockAssembler.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -353,6 +376,9 @@
 				1F31E2B42B90C216002BCDDA /* PBXTargetDependency */,
 			);
 			name = "IOS AssignmentTests";
+			packageProductDependencies = (
+				1FD2031A2BD00A3C00D5544A /* SnapshotTesting */,
+			);
 			productName = "IOS AssignmentTests";
 			productReference = 1F31E2AF2B90C216002BCDDA /* IOS AssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -409,6 +435,7 @@
 			packageReferences = (
 				1F7E25B32B611D7B00345841 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1F1498222BC6C5CC00DDEAA8 /* XCRemoteSwiftPackageReference "Swinject" */,
+				1FD203192BD00A3C00D5544A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 1FD1D1862B56F5EB0038A73C /* Products */;
 			projectDirPath = "";
@@ -446,7 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F31E2B22B90C216002BCDDA /* HomeViewModelTests.swift in Sources */,
-				1F780E482BBFDF1000D1BCF3 /* MockHomeViewModel.swift in Sources */,
+				1FD203252BD6457E00D5544A /* UsersViewModelTests.swift in Sources */,
+				1FD2031D2BD1072900D5544A /* SnapshotTest.swift in Sources */,
 				1F1498212BC66D3F00DDEAA8 /* SignUpViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +505,7 @@
 				1F41C3472B693D8B007FD4EA /* HomeListRowView.swift in Sources */,
 				1F7E25B22B61083200345841 /* NetworkingService.swift in Sources */,
 				1F0C15222B72158E00CE5303 /* UsersDetailView.swift in Sources */,
+				1FD2032D2BD7E14A00D5544A /* AppDelegate.swift in Sources */,
 				1F5EDD442BB40BCE00A79E5A /* Errors.swift in Sources */,
 				1FAC8DA42B7A2CBD00C94302 /* UserPostsViewModel.swift in Sources */,
 				1F780E402BBD3AC300D1BCF3 /* MockNetworkingService.swift in Sources */,
@@ -484,6 +513,7 @@
 				1F497D6E2B59309C00017514 /* SideMenuRowViewModel.swift in Sources */,
 				1F0C151E2B70D5C600CE5303 /* UsersViewModel.swift in Sources */,
 				1FE70C492B5FA96600E5BDBD /* HomeView.swift in Sources */,
+				1FD203212BD63D0A00D5544A /* MockUsersManager.swift in Sources */,
 				1FB1425F2B88BE0E00F0E563 /* UserCommentsViewModel.swift in Sources */,
 				1FE70C4D2B5FABE500E5BDBD /* UsersView.swift in Sources */,
 				1FE70C412B5FA84200E5BDBD /* SideMenuButtonView.swift in Sources */,
@@ -492,11 +522,13 @@
 				1F2E65DE2B5FBAFE002CE79C /* ToDosView.swift in Sources */,
 				1FAC8D9F2B7A204E00C94302 /* UserPostsView.swift in Sources */,
 				1F497D702B593A5100017514 /* MainTabView.swift in Sources */,
+				1FD203292BD798D400D5544A /* MockAssembler.swift in Sources */,
 				1FB142572B8778D000F0E563 /* UserToDosView.swift in Sources */,
 				1F0C15342B74F61500CE5303 /* ToDosManager.swift in Sources */,
 				1FB142632B88C33E00F0E563 /* UserCommentsView.swift in Sources */,
 				1F0C152A2B72718300CE5303 /* HomeManager.swift in Sources */,
 				1FDAD3162BA05DA600CC2C1F /* Strings.swift in Sources */,
+				1FD203232BD6401000D5544A /* MockToDosManager.swift in Sources */,
 				1FA418432B9B2984001113BE /* SignUpViewModel.swift in Sources */,
 				1F0C151C2B70D2EC00CE5303 /* UsersModel.swift in Sources */,
 				1FB142612B88C31500F0E563 /* UserCommentsRowView.swift in Sources */,
@@ -505,10 +537,12 @@
 				1FA418452B9B603D001113BE /* SignUpView.swift in Sources */,
 				1F874CF72B84F31400406CE3 /* UserToDosViewModel.swift in Sources */,
 				1FB1425B2B88BDE200F0E563 /* UserCommentsManager.swift in Sources */,
+				1FD2032B2BD7A33A00D5544A /* GraphController.swift in Sources */,
 				1F0C15282B72494800CE5303 /* UserManager.swift in Sources */,
 				1F7E25B02B60FB0B00345841 /* NavigationBarModifier.swift in Sources */,
 				1F0C152C2B736AAD00CE5303 /* UsersDetailManager.swift in Sources */,
 				1FAC8D9D2B7A008A00C94302 /* ToDoListRowViewModel.swift in Sources */,
+				1FD203272BD66D3A00D5544A /* MockUsersDetailManager.swift in Sources */,
 				1F780E442BBD3D5600D1BCF3 /* MockHomeManager.swift in Sources */,
 				1F7255B82BA2F24300DAF0EA /* ImageManager.swift in Sources */,
 			);
@@ -794,6 +828,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		1FD203192BD00A3C00D5544A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -806,6 +848,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1F7E25B32B611D7B00345841 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1FD2031A2BD00A3C00D5544A /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FD203192BD00A3C00D5544A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
