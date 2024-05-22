@@ -7,6 +7,7 @@
 
 import Foundation
 
+@testable import IOS_Assignment
 
 struct MockHomeManager: HomeManagerType {
     var service: NetworkingServiceType
@@ -17,11 +18,11 @@ struct MockHomeManager: HomeManagerType {
 
     func fetchPageInfo() async -> Result<HomeResponse, MyError> {
         
-        return await service.get(urlString: "/Users/vsoronia/Desktop/mock_data1.txt")
+        return await service.get(urlString: "mock_data1")
     }
 
     func fetchPosts(for page: Int) async -> Result<HomePostResults, MyError> {
 
-        return await service.get(urlString: "/Users/vsoronia/Desktop/mock_data\(page).txt")
+        return await service.get(urlString: "mock_data\(page)")
     }
 }

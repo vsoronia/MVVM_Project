@@ -1,0 +1,34 @@
+{
+"code": 200,
+"meta": {
+"pagination": {
+"total": 1463,
+"pages": 147,
+"page": 1,
+"limit": 10
+}
+},
+"data": [
+{
+"id": 47900,
+"user_id": 6861183,
+"title": "Et minus libero aegrotatio teres quia.",
+"due_on": "2024-04-25T00:00:00.000+05:30",
+"status": "pending"
+},
+{
+"id": 47899,
+"user_id": 6861182,
+"title": "Repellat audentia conservo vel ratione universe.",
+"due_on": "2024-05-01T00:00:00.000+05:30",
+"status": "pending"
+},
+{
+"id": 47890,
+"user_id": 6861165,
+"title": "Aeneus tabula fugiat est turbo.",
+"due_on": "2024-05-06T00:00:00.000+05:30",
+"status": "completed"
+}
+]
+}
