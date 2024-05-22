@@ -11,6 +11,7 @@ import XCTest
 @testable import IOS_Assignment
 
 class SnapshotTest: XCTestCase {
+    var graphController: GraphController!
     
     let expectation = XCTestExpectation(description: "Data loading expectation")
 
@@ -18,6 +19,16 @@ class SnapshotTest: XCTestCase {
     let selectedSideMenuTab = Binding.constant(0)
     let showAnimation = Binding.constant(false)
     let loadedFirstTime = Binding.constant(true)
+    
+    
+    override func setUp() async throws {
+      graphController = GraphController.shared
+      graphController.loadAssemblies([MockAssembly()])
+    }
+  
+    override func tearDown() async throws {
+        graphController = nil
+    }
     
     func testHomeView() {
         

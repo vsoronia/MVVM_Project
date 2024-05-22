@@ -10,7 +10,7 @@ import XCTest
 
 class HomeViewModelTests: XCTestCase {
     
-//    var graphController: GraphController!
+    var graphController: GraphController!
   
     let viewModel = HomeViewModel(page: 1, homeManager: MockHomeManager(service: MockNetworkingService()))
     
@@ -21,15 +21,16 @@ class HomeViewModelTests: XCTestCase {
     ]
     
     override func setUp() async throws {
-//      graphController = GraphController.shared
-//      graphController.loadAssemblies([MockAssembly()])
+      graphController = GraphController.shared
+      graphController.loadAssemblies([MockAssembly()])
     }
   
     override func tearDown() async throws {
-//        graphController = nil
+        graphController = nil
     }
     
     func testBoundaryConditions() async {
+        
         await viewModel.fetchData(page: viewModel.pages)
         viewModel.page = viewModel.pages
         await viewModel.fetchMorePosts()

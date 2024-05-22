@@ -11,6 +11,8 @@ import XCTest
 
 class SignUpViewModelTests: XCTestCase {
    
+    var graphController: GraphController!
+    
     var viewModel: SignUpViewModel!
     
     override func setUp() {
@@ -22,6 +24,14 @@ class SignUpViewModelTests: XCTestCase {
         viewModel.email = "john.doe@example.com"
         viewModel.password = "Abc@1234"
         viewModel.confirmPassword = "Abc@1234"
+    }
+    override func setUp() async throws {
+      graphController = GraphController.shared
+      graphController.loadAssemblies([MockAssembly()])
+    }
+  
+    override func tearDown() async throws {
+        graphController = nil
     }
 
     override func tearDown() {

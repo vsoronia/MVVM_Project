@@ -1,0 +1,34 @@
+{
+"code": 200,
+"meta": {
+"pagination": {
+"total": 2765,
+"pages": 277,
+"page": 1,
+"limit": 10
+}
+},
+"data": [
+{
+"id": 6859470,
+"name": "Chitramala Banerjee",
+"email": "chitramala_banerjee@macgyver-greenholt.test",
+"gender": "male",
+"status": "active"
+},
+{
+"id": 6859469,
+"name": "Ritesh Banerjee",
+"email": "banerjee_ritesh@tromp.example",
+"gender": "male",
+"status": "inactive"
+},
+{
+"id": 6859461,
+"name": "Aasa Guha",
+"email": "aasa_guha@morissette.example",
+"gender": "female",
+"status": "active"
+}
+]
+}

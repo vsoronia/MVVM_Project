@@ -1,0 +1,11 @@
+{
+"code": 200,
+"meta": null,
+"data": {
+"id": 6859467,
+"name": "Anuja Ahuja",
+"email": "anuja_ahuja@carter-berge.example",
+"gender": "male",
+"status": "active"
+}
+}
