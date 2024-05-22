@@ -33,5 +33,3 @@ class ServiceAssembly: Assembly {
         container.register(UserCommentsViewModel.self) { r in UserCommentsViewModel(userCommentsManager: r.resolve(UserCommentsManagerType.self)!) }
     }
 }
-
-//public let serviceAssembler = Assembler([ServiceAssembly()])

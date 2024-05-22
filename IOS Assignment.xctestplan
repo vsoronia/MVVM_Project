@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "B51B2D5C-1DFB-44BD-B8BB-9AB40749CF16",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IOS Assignment.xcodeproj",
+      "identifier" : "1FD1D1842B56F5EB0038A73C",
+      "name" : "IOS Assignment"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:IOS Assignment.xcodeproj",
+        "identifier" : "1F31E2AE2B90C216002BCDDA",
+        "name" : "IOS AssignmentTests"
+      }
+    }
+  ],
+  "version" : 1
+}

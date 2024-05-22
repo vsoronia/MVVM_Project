@@ -1,0 +1,12 @@
+{
+"code": 200,
+"meta": {
+"pagination": {
+"total": 0,
+"pages": 0,
+"page": 1,
+"limit": 10
+}
+},
+"data": []
+}

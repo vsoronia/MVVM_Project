@@ -7,6 +7,8 @@
 
 import Foundation
 
+@testable import IOS_Assignment
+
 struct MockUsersManager: UserManagerType {
     var service: NetworkingServiceType
 
@@ -15,12 +17,10 @@ struct MockUsersManager: UserManagerType {
     }
 
     func fetchPageInfo() async -> Result<UsersResponse, MyError> {
-        
-        return await service.get(urlString: "/Users/vsoronia/Desktop/users_mock_data1.txt")
+        return await service.get(urlString: "users_mock_data1")
     }
 
     func fetchUsers(for page: Int) async -> Result<UsersResults, MyError> {
-
-        return await service.get(urlString: "/Users/vsoronia/Desktop/users_mock_data\(page).txt")
+        return await service.get(urlString: "users_mock_data\(page)")
     }
 }
