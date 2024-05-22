@@ -26,6 +26,7 @@ This project aimed to create an iOS application that meets specific specificatio
 - Alamofire networking
 - SwiftUI
 - Combine
+- Protocol Oriented Programming
 - Concurrency (async/await)
 - MVVM Architecture
 - Swift Snapshot Testing for snapshot tests
