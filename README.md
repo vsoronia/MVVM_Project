@@ -37,7 +37,7 @@ This project aimed to create an iOS application that meets specific specificatio
 - Navigation and design were implemented using SwiftUI.
 - The application works only online, without using cache.
 - Unit testing was performed on multiple screens (ViewModel) using non-instrumented XCTest to test the states of a screen using MVVM.
-- Unit testing coverage over 90% for tested ViewModels.
+- Unit testing coverage over **90%** for tested ViewModels.
 - Snapshot testing was implemented using Swift Snapshot Testing for UI testing.
 - Swinject was used for dependency injection from graphs.
 - The application allows the deletion of users, triggering a DELETE request to the API, and refreshing the user list afterwards.
