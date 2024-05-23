@@ -15,10 +15,7 @@ This project aimed to create an iOS application that meets specific specificatio
 - TODOs screen displays a feed of TODOs obtained from the provided API.
 - Users details screen shows details of a selected user and allows interactions such as deleting the user, showing posts, comments, and TODOs.
 - Validation of information screen validates user input in text fields before enabling the submit button.
-- Concurrency (async/await).
-- Generics.
-- Error Handling.
-- Unit Tests.
+
 
 #### Project Technologies:
 
@@ -29,6 +26,9 @@ This project aimed to create an iOS application that meets specific specificatio
 - Protocol Oriented Programming
 - Concurrency (async/await)
 - MVVM Architecture
+- Generics
+- Error Handling
+- Unit Tests
 - Swift Snapshot Testing for snapshot tests
 - Swinject for dependency injection from graphs
 
@@ -37,6 +37,7 @@ This project aimed to create an iOS application that meets specific specificatio
 - Navigation and design were implemented using SwiftUI.
 - The application works only online, without using cache.
 - Unit testing was performed on multiple screens (ViewModel) using non-instrumented XCTest to test the states of a screen using MVVM.
+- Unit testing coverage over 90% for tested ViewModels.
 - Snapshot testing was implemented using Swift Snapshot Testing for UI testing.
 - Swinject was used for dependency injection from graphs.
 - The application allows the deletion of users, triggering a DELETE request to the API, and refreshing the user list afterwards.
